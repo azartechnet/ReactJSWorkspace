@@ -21,6 +21,9 @@ const r1=ReactDOM.createRoot(document.getElementById("root"))
 r1.render(<Sample employee={employee}/>);*/
 
 import Sample1 from './App';
+import  MyForm from './login';
+// const r1=ReactDOM.createRoot(document.getElementById("root"))
+// r1.render(<Sample1/>);
 
-const r1=ReactDOM.createRoot(document.getElementById("root"))
-r1.render(<Sample1/>);
+const r1=ReactDOM.createRoot(document.getElementById("root"));
+r1.render(<MyForm/>);

@@ -22,7 +22,7 @@ function Sample1()
         <>
            <h1>Your Employee Details</h1>
            <ul>
-            {emp1.map((Sample)=><Sample c1={Sample}/>)}
+            {emp1.map((s)=><Sample c1={s}/>)}
            </ul>
         </>
     );
