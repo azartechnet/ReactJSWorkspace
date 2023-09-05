@@ -1,5 +1,15 @@
+
+
 const Home = () => {
-  return <h1>Home</h1>;
+  return (
+    
+
+      <div>
+        <img  src={`${process.env.PUBLIC_URL}/assets/images/c1.jpeg`} alt="" />
+      </div>
+
+  
+  );
 };
 
 export default Home;
