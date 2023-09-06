@@ -14,7 +14,7 @@ function App() {
   const[newFoodName, setNewFoodName]=useState('');
 
   useEffect(() => {
-    Axios.get('http://localhost:3001/read')
+    Axios.get('http://localhost:3000/read')
     .then((response) => {
       setFoodList(response.data);
     })
@@ -22,7 +22,7 @@ function App() {
   }, [])
 
   const addFoodData = () =>{
-    Axios.post("http://localhost:3001/insert",
+    Axios.post("http://localhost:3000/insert",
     {
       foodName:foodName, 
       description:description
@@ -30,12 +30,12 @@ function App() {
   };
 
 const UpdateFoodData = (id) =>{
-    Axios.put("http://localhost:3001/update", {
+    Axios.put("http://localhost:3000/update", {
       id:id, newFoodName:newFoodName})
   }
 
   const DeleteData = (id) =>{
-    Axios.delete(`http://localhost:3001/delete/${id}`)
+    Axios.delete(`http://localhost:3000/delete/${id}`)
       
   };
 

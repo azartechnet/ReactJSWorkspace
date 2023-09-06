@@ -1,0 +1,7 @@
+Step 1:Open Crud Project in Same Window
+
+Step 2:Run a Project Client and Server in Same Terminals
+
+Step 3:Connect MonogoCompass
+
+Step 4:npm start(Client) and node index.js(Server)
