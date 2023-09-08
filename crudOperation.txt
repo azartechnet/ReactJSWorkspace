@@ -5,3 +5,75 @@ Step 2:Run a Project Client and Server in Same Terminals
 Step 3:Connect MonogoCompass
 
 Step 4:npm start(Client) and node index.js(Server)
+
+=========================================================
+Step 1:To Create folder
+
+mkdir crudproject
+
+crudproject>
+
+Step 2:After Creating the Project
+
+cd>crudproject>npx create-react-app client
+
+cd>crudproject>client>npm install axios
+
+After Creating the Project installed the Project
+
+npm install axios
+
+npm i react-bootstrap@next bootstrap@5.1.0 react-router-dom axios formik yup
+
+cd>crudproject>mkdir server
+
+cd>server> npm init -y
+
+Step 1: Run command to create server folder for server and get inside of it.
+
+mkdir server && cd server
+Step 2: Create package.json – Next, we need to create a separate package.json file for managing the server of our crudproject  app.
+
+npm init -y
+
+Go to server/package.json file will look like the following. Replace the test property like: 
+
+"test": "echo \"Error: no test specified\" && exit 1" 
+"start": "nodemon server.js"
+Step 3: Install Node Dependencies – Install the following Node dependencies. 
+
+NPM
+
+Detail
+======
+Express	Node.js framework that helps in creating powerful REST APIs.
+body-parser	Extracts the entire body portion of a request stream and exposes it on req.body.
+cors	It’s a Node.js package that helps in enabling Access-Control-Allow-Origin CORS header.
+mongoose	It’s a NoSQL database for creating a robust web application.
+To install the above dependencies, run the following code on the terminal. 
+
+npm install express body-parser cors mongoose
+
+You may install nodemon as dev dependency to automate the server restarting process.
+
+npm i -D nodemon
+
+==============================
+Explaination of Method
+=======================
+useEffect
+=========
+The useEffect Hook allows you to perform side effects in your components. Some examples of side effects are: fetching data, directly updating the DOM
+
+useState
+========
+useState is React Hook that allows you to add state to a functional component.
+ It returns an array with two values: the current state and a function to update it. 
+
+Axios
+======
+Axios is a Javascript library used to make HTTP requests from node. js or
+4 XMLHttpRequests from the browser and it supports the Promise API that is native to JS ES6.
+
+
+Body-parser is a middleware that processes incoming HTTP requests in Node.js
