@@ -57,6 +57,6 @@ app.delete("/delete/:id", async(req,res) => {
     await FoodModel.findByIdAndRemove(id).exec();
     res.send("deleted");
 });
-app.listen(3000, () =>{
+app.listen(3001, () =>{
     console.log("server is running");
 });
