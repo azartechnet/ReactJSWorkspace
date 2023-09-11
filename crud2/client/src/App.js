@@ -1,4 +1,3 @@
-
 import './App.css';
 import { useState ,useEffect} from 'react';
 import Axios from 'axios';
@@ -10,10 +9,11 @@ function App() {
 
   //fetch data
   const[foodList,setFoodList]=useState([]);
-  
+  //Edit
+  const[newFoodName, setNewFoodName]=useState('');
 
   useEffect(() => {
-    Axios.get('http://localhost:3000/read')
+    Axios.get('http://localhost:3001/read')
     .then((response) => {
       setFoodList(response.data);
     })
@@ -21,14 +21,24 @@ function App() {
   }, [])
 
   const addFoodData = () =>{
-    Axios.post("http://localhost:3000/insert",
+    Axios.post("http://localhost:3001/insert",
     {
       foodName:foodName, 
       description:description
     });
   };
 
-  
+const UpdateFoodData = (id) =>{
+    Axios.put("http://localhost:3001/update", {
+      id:id, newFoodName:newFoodName})
+  }
+
+  const DeleteData = (id) =>{
+    Axios.delete(`http://localhost:3001/delete/${id}`)
+      
+  };
+
+
   return (
     <div className="App">
       <h1>CRUD - MERN</h1>
@@ -53,7 +63,16 @@ function App() {
             return    <tr>
        <td>{val.foodName}</td>
        <td>{val.description}</td>  
-       
+       <td>
+        <input type="text" placeholder="update foodname"
+        onChange={(event) => {
+          setNewFoodName(event.target.value);
+        }}></input>
+        <button onClick={()=> UpdateFoodData(val._id)}>Edit</button>
+        </td>
+        <td>
+          <button onClick={()=> DeleteData(val._id)}>Delete</button>
+          </td> 
         
   
         </tr>
