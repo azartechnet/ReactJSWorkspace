@@ -77,3 +77,55 @@ Axios is a Javascript library used to make HTTP requests from node. js or
 
 
 Body-parser is a middleware that processes incoming HTTP requests in Node.js
+
+
+Deploy Reactjs in github
+=========================
+Open gitbash in VS Terminal
+
+Client
+=======
+
+git init
+
+git add -A
+git commit -m "first commit"
+
+git push
+
+
+git remote add origin https://github.com/azartechnet/Client.git
+
+git push -u origin master
+
+Server
+=======
+git init
+
+git add -A
+git commit -m "first commit"
+
+git push
+
+
+git remote add origin https://github.com/azartechnet/server.git
+
+git push -u origin master
+
+(ClientSide)
+npm i gh-pages --save-dev
+
+Client Side
+===========
+package.json
+============
+ "homepage":"https://azartechnet.github.io/client"
+
+"scripts": {
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build",
+
+git terminal
+=============
+npm run deploy
+
