@@ -94,7 +94,7 @@ git commit -m "first commit"
 git push
 
 
-git remote add origin https://github.com/azartechnet/Client.git
+git remote add origin https://github.com/azartechnet/client.git
 
 git push -u origin master
 
@@ -129,3 +129,6 @@ git terminal
 =============
 npm run deploy
 
+WebService
+==========
+render.com
