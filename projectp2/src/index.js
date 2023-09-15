@@ -7,7 +7,11 @@ import ReactDOM from "react-dom/client"
 //import {Sample}  from "./ReactState"
 
 // import Football from "./EventExample"
-import Goal from "./ConditionalRender"
+//import Goal from "./ConditionalRender"
+
+//import Counter from "./Hooks"
+//import Garage from "./ListConcepts"
+import MyForm from "./ReactForms"
 
 // import { Sample } from "./ConstructorExample"
 /*class Sample extends React.Component
@@ -39,6 +43,19 @@ r1.render(<Azar c1="Welcome"/>);*/
 // r1.render(<Football/>)
 
 
+// const c1=document.getElementById('root')
+// const r1=ReactDOM.createRoot(c1)
+// r1.render(<Goal isGoal={true}/>)
+
+// const c1=document.getElementById('root')
+// const r1=ReactDOM.createRoot(c1)
+// r1.render(<Counter/>)
+
+
+// const c1=document.getElementById('root')
+// const r1=ReactDOM.createRoot(c1)
+// r1.render(<Garage/>)
+
 const c1=document.getElementById('root')
 const r1=ReactDOM.createRoot(c1)
-r1.render(<Goal isGoal={true}/>)
+r1.render(<MyForm/>)
