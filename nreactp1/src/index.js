@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import  './index.css'
+import { Header } from "./header";
 //Basic function components
 /*function Hello()
 {
@@ -88,7 +89,10 @@ r1.render(my1)*/
 
 //Attributs of className
 
-const my1=<h1 className='d1'>Welcome to the className Attributes</h1>
+/*const my1=<h1 className='d1'>Welcome to the className Attributes</h1>
 
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(my1);
+r1.render(my1);*/
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Header/>);
