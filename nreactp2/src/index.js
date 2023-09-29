@@ -1,6 +1,12 @@
 import React from "react";
 import ReactDOM  from "react-dom/client";
-import Sample from "./App";
+//import { Sample } from "./eventstate";
+//import {Sample} from "./Statep1";
+//import Football from "./eventarrow";
+
+import { Goal } from "./conditionalrender";
+
+//import { Noofday } from "./listconcepts";
 
 /*class Sample extends React.Component
 {
@@ -42,9 +48,31 @@ r1.render(<MainFunction/>)*/
 
 //This concepts of Component in file
 
+/*const r1=ReactDOM.createRoot(document.getElementById('root'))
+
+r1.render(<Sample/>)*/
+
+//React State
+
+/*const c1=document.getElementById('root');
+const r1=ReactDOM.createRoot(c1)
+r1.render(<Sample/>)*/
+
+//React State onClick change the value
+
+/*const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+//Passing as Argument using arrow function
+
+/*const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football/>)*/
+
+//Conditional Rendering
 const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Goal isGoal={true}/>);
 
-r1.render(<Sample/>)
+//React List
 
-
-
+/*const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Noofday/>)*/
