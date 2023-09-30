@@ -4,10 +4,13 @@ import ReactDOM  from "react-dom/client";
 //import {Sample} from "./Statep1";
 //import Football from "./eventarrow";
 
-import { Goal } from "./conditionalrender";
+//import { Goal } from "./conditionalrender";
 
 //import { Noofday } from "./listconcepts";
 
+//import MyForm from "./reactform";
+
+import ContactForm from "./hooksp1";
 /*class Sample extends React.Component
 {
    render()
@@ -69,10 +72,20 @@ r1.render(<Sample/>)*/
 r1.render(<Football/>)*/
 
 //Conditional Rendering
-const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Goal isGoal={true}/>);
+/*const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Goal isGoal={true}/>);*/
 
 //React List
 
 /*const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(<Noofday/>)*/
+
+//React Form
+
+/*const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<MyForm/>)*/
+
+//Hooks Contact form
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<ContactForm/>)
