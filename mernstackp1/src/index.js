@@ -72,10 +72,47 @@ const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(my1)*/
 
 //fragement tag
-const my1=(
+/*const my1=(
   <>
   <h1>Welcome to the First App</h1>
   </>
 )
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(my1)*/
+
+//className
+/*import './index.css';
+function Sample()
+{
+  return(
+
+    <>
+      <h1 className="d1">Welcome to the className</h1>
+    </>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+//Conditional statment
+/*const x=5
+let txt="goodbye"
+if(x>10)
+{
+  txt="Welcome"
+}
+// else
+// {
+//   txt="else block"
+// }
+const my1=<h1>{txt}</h1>
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(my1)*/
+
+//Ternary operator
+
+const x=parseInt(prompt("Enter the x value is::"))
+const my1=<h1>{(x)<10?"Hello":"goodbye"}</h1>
 const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(my1)
