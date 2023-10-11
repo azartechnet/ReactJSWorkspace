@@ -112,7 +112,79 @@ r1.render(my1)*/
 
 //Ternary operator
 
-const x=parseInt(prompt("Enter the x value is::"))
+/*const x=parseInt(prompt("Enter the x value is::"))
 const my1=<h1>{(x)<10?"Hello":"goodbye"}</h1>
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(my1)
+r1.render(my1)*/
+
+//class component
+/*class Sample extends React.Component
+{
+  render(){
+    return(
+      <>
+      <h1>Welcome to the class component</h1>
+      </>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+//Properties
+
+/*function Sample(props)
+{
+  return <h2>I am in a {props.c1}</h2>
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample c1='welcome'/>)*/
+
+//Nested function Component
+
+/*function Sample()
+{
+  return<h2>Welcome Sample function</h2>
+}
+function Sample1()
+{
+  return (
+    <>
+    <h1>Welcome to the Sample1 function</h1>
+    <Sample/>
+    </>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample1/>)*/
+
+/*import App from "./App";
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<App/>)*/
+
+//props in the constructor
+//JavaScript Program
+/*class Polygon {
+  constructor() {
+    this.name = 'Polygon';
+  }
+}
+
+const poly1 = new Polygon();
+
+console.log(poly1.name);
+// Expected output: "Polygon"
+*/
+
+class Sample extends React.Component
+{
+  // constructor(props)
+  // {
+  //   super(props);
+  // }
+  render(){
+    return<h2>I am a{this.props.m1}</h2>
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample m1="azar"/>)
