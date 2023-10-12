@@ -176,7 +176,7 @@ console.log(poly1.name);
 // Expected output: "Polygon"
 */
 
-class Sample extends React.Component
+/*class Sample extends React.Component
 {
   // constructor(props)
   // {
@@ -187,4 +187,62 @@ class Sample extends React.Component
   }
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Sample m1="azar"/>)
+r1.render(<Sample m1="azar"/>)*/
+
+//React State Object
+
+/*class Sample extends React.Component
+{
+    constructor(props)
+    {
+      super(props);
+      this.state={
+        empid:1001,
+        empname:"azar",
+        salary:1000
+      }
+    }
+    render(){
+      return(
+        <>
+        Your value is::
+        <h1>{this.state.empid}</h1>
+        <h1>{this.state.empname}</h1>
+        <h1>{this.state.salary}</h1>
+        </>
+      )
+    }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+//React Changing the state object
+
+class Sample extends React.Component
+{
+    constructor(props)
+    {
+      super(props);
+      this.state={
+        empid:1001,
+        empname:"azar",
+        salary:1000
+      }
+    }
+    changeValue=()=>{
+      this.setState({salary:2000})
+    }
+    render(){
+      return(
+        <>
+        Your value is::
+        <h1>{this.state.empid}</h1>
+        <h1>{this.state.empname}</h1>
+        <h1>{this.state.salary}</h1>
+        <button type="button" onClick={this.changeValue}>ClickHere</button>
+        </>
+      )
+    }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)
