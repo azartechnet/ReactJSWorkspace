@@ -218,7 +218,7 @@ r1.render(<Sample/>)*/
 
 //React Changing the state object
 
-class Sample extends React.Component
+/*class Sample extends React.Component
 {
     constructor(props)
     {
@@ -245,4 +245,19 @@ class Sample extends React.Component
     }
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Sample/>)
+r1.render(<Sample/>)*/
+
+//React Event
+
+function Football()
+{
+  const shoot=()=>{
+    alert("Great Shot!!!")
+  }
+  return(
+    <button onClick={shoot}>TakeShoot</button>
+  )
+}
+
+const r1=ReactDOM.createRoot(document.getElementById("root"))
+r1.render(<Football/>)
