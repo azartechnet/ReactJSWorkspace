@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client'
 /*function Sample()
 {
   return<h1>Welcome to the function</h1>
@@ -24,7 +24,7 @@ r.render(<App />);*/
 
 //Through Basic Rendring Creating the form
 
-function Sample()
+/*function Sample()
 {
   return(
     <div>
@@ -40,4 +40,18 @@ function Sample()
 
 const c1=document.getElementById('root');
 const r=ReactDOM.createRoot(c1);
-r.render(<Sample />);
+r.render(<Sample />);*/
+
+//Dynamic Rendering
+
+const App=()=>{
+  const username="azar"
+  return(
+    <div>
+      <h1>Welcome {username}</h1>
+      <p>{new Date().toLocaleDateString()}</p>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<App/>)
