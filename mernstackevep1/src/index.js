@@ -15,7 +15,7 @@ const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(<Sample/>);*/
 
 //Basic Html rendering
-const App=()=>{
+/*const App=()=>{
   return(
     <div>
       <h1>This App component</h1>
@@ -24,4 +24,29 @@ const App=()=>{
 }
 
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<App/>);
+r1.render(<App/>);*/
+
+//Dynamic Rendering
+
+/*const App=()=>{
+  const username="welcome to azar"
+  return(
+    <div>
+      <h1>{username}</h1>
+      <p>{new Date().toLocaleDateString()}</p>
+    </div>
+  )
+}
+
+ReactDOM.render(<App/>,document.getElementById('root'));*/
+
+//Explore the JSX Example
+
+const myele=<h1>Welcome to the JSX</h1>
+console.log(myele)
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(myele);
+
+
+
