@@ -249,7 +249,7 @@ r1.render(<Sample/>)*/
 
 //React Event
 
-function Football()
+/*function Football()
 {
   const shoot=()=>{
     alert("Great Shot!!!")
@@ -260,4 +260,49 @@ function Football()
 }
 
 const r1=ReactDOM.createRoot(document.getElementById("root"))
-r1.render(<Football/>)
+r1.render(<Football/>)*/
+
+//Conditional Rendering
+
+/*function MissedGoal()
+{
+   return <h1>MISSED</h1>
+}
+function MadeGoal()
+{
+  return <h1>GOAL</h1>
+}
+function Goal(props)
+{
+  const isGoal=props.isGoal;
+  if (isGoal===true){
+    return <MadeGoal />
+    }else {
+      return <MissedGoal />
+      }
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Goal isGoal={true}/>)*/
+
+//Logical Operator
+function Garage(props) {
+  const cars = props.cars;
+  return (
+    <>
+      <h1>Garage</h1>
+      {cars.length>10&&
+       
+           <p>{cars.length}</p>
+       }
+       {/* else
+       {
+        <p>{cars}</p>
+       } */}
+    </>
+  );
+}
+
+const cars = ['Ford', 'BMW', 'Audi'];
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage cars={cars} />);
