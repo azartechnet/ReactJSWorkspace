@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import ReactDOM from "react-dom/client"
 
 /*function Sample()
@@ -286,23 +286,38 @@ const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(<Goal isGoal={true}/>)*/
 
 //Logical Operator
-function Garage(props) {
-  const cars = props.cars;
-  return (
-    <>
-      <h1>Garage</h1>
-      {cars.length>10&&
+// function Garage(props) {
+//   const cars = props.cars;
+//   return (
+//     <>
+//       <h1>Garage</h1>
+//       {cars.length>10&&
        
-           <p>{cars.length}</p>
-       }
-       {/* else
-       {
-        <p>{cars}</p>
-       } */}
-    </>
-  );
-}
+//            <p>{cars.length}</p>
+//        }
+//        {/* else
+//        {
+//         <p>{cars}</p>
+//        } */}
+//     </>
+//   );
+// }
+// const cars = ['Ford', 'BMW', 'Audi'];
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<Garage cars={cars} />);
 
-const cars = ['Ford', 'BMW', 'Audi'];
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Garage cars={cars} />);
+//Hooks Example
+import React, { useState } from "react";
+function CounterExample() {
+  // Declare a new state variable, which we'll call "count"
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+    );
+    }
+  const s1=ReactDOM.createRoot(document.getElementById('root'))
+  s1.render(<CounterExample />);
+  
