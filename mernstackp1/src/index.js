@@ -307,7 +307,7 @@ r1.render(<Goal isGoal={true}/>)*/
 // root.render(<Garage cars={cars} />);
 
 //Hooks Example
-import React, { useState } from "react";
+/*import React, { useState } from "react";
 function CounterExample() {
   // Declare a new state variable, which we'll call "count"
   const [count, setCount] = useState(0);
@@ -319,5 +319,60 @@ function CounterExample() {
     );
     }
   const s1=ReactDOM.createRoot(document.getElementById('root'))
-  s1.render(<CounterExample />);
+  s1.render(<CounterExample />);*/
+
+  //React List
+
+ /* function Sample(props)
+  {
+    return<li>I am a {props.name}</li>
+  }
+  function Sample2()
+  {
+    const empname=["azar","mohamed","raja"]
+    return(
+      <>
+         <h1>EmployeeName is</h1>
+         <ul>
+          {empname.map((item)=><Sample name={item}/>)}
+           <li>{props.name}</li> 
+          <li></li>
+         </ul>
+      </>
+    )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Sample2 />);*/
   
+  //Keys Concepts
+
+  function Sample(props)
+  {
+    return (
+      <>
+       <li>I am a {props.name}</li>  
+       <li>Your Id is{props.id}</li> 
+      </>
+    )
+   
+  }
+  function Sample2()
+  {
+    const empname=[
+      {"id":1,"name":"azar"},
+      {"id":2,"name":"mohamed"},
+      {"id":3,"name":"raja"}
+    ];
+    return(
+      <>
+        <h1>This EmployeeName</h1>
+        <ul>
+          {empname.map((item,index)=>(
+            <Sample key={item.id} name={item.name}/>
+            ))}
+        </ul>
+      </>
+    )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Sample2 />);
