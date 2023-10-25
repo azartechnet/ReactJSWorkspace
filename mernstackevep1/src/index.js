@@ -42,11 +42,27 @@ ReactDOM.render(<App/>,document.getElementById('root'));*/
 
 //Explore the JSX Example
 
-const myele=<h1>Welcome to the JSX</h1>
+/*const myele=<h1>Welcome to the JSX</h1>
 console.log(myele)
 
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(myele);
+r1.render(myele);*/
 
+//Rendering Lists in react
+import './index.css';
+const myelem=(
+  <div>
+  <ul>
+    <li>Product1</li>
+    <li>Product2</li>
+    <li>Product3</li>
+  </ul>
+  <h1 className="sample">Welcome</h1>
+  </div>
 
+  
+)
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(myelem)
 
