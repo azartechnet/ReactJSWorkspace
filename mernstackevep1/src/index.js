@@ -49,7 +49,7 @@ const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(myele);*/
 
 //Rendering Lists in react
-import './index.css';
+/*import './index.css';
 const myelem=(
   <div>
   <ul>
@@ -64,5 +64,34 @@ const myelem=(
 )
 
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(myelem)
+r1.render(myelem)*/
 
+//React Conditional Statement
+
+//const x=5;
+/*const x=parseInt(prompt("Enter the x value is::"))
+let text="";
+if(x<10)
+{
+  text="Welcome to the Application"
+}
+else
+{
+  text="goodbye";
+}
+const myele=<h1>{text}</h1>
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(myele)*/
+
+//class Component
+
+class Sample extends React.Component
+{
+  render(){
+    return<h2>This is Class Component</h2>
+  }
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>);
