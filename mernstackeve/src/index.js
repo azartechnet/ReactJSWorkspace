@@ -44,7 +44,7 @@ r.render(<Sample />);*/
 
 //Dynamic Rendering
 
-const App=()=>{
+/*const App=()=>{
   const username="azar"
   return(
     <div>
@@ -54,4 +54,23 @@ const App=()=>{
   )
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<App/>)
+r1.render(<App/>)*/
+//JSX Coding
+
+/*const myelem=<h1>Welcome to the JSX{5+5}</h1>
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(myelem)*/
+
+//React List
+
+const myele=(
+  <ul>
+    <li>list1</li>
+    <li>list2</li>
+    <li>list3</li>
+    <li>list4</li>
+  </ul>
+)
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(myele)

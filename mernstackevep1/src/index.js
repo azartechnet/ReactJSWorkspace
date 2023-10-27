@@ -86,7 +86,7 @@ r1.render(myele)*/
 
 //class Component
 
-class Sample extends React.Component
+/*class Sample extends React.Component
 {
   render(){
     return<h2>This is Class Component</h2>
@@ -94,4 +94,46 @@ class Sample extends React.Component
 }
 
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Sample/>);
+r1.render(<Sample/>);*/
+
+//function components
+
+/*function Sample(props)
+{
+  return(
+    <h2>This is Functional component{props.pid}</h2>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample pid="101"/>);*/
+
+//Component in Component
+
+
+/*function Parent()
+{
+  return(
+    <>
+    <h1>Welcome to the Parent</h1>
+    </>
+  )
+}
+function Child()
+{
+  return(
+    <>
+    <h1>This is Child Component</h1>
+    <Parent/>
+    </>
+  )
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Child/>)*/
+
+//Component in files
+
+import App from "./App";
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<App/>);
