@@ -133,7 +133,84 @@ r1.render(<Child/>)*/
 
 //Component in files
 
-import App from "./App";
+/*import App from "./App";
 
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<App/>);
+r1.render(<App/>);*/
+
+//React Class Component using state
+
+/*class Sample extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state={
+      name:"John Doe",
+      age:35,
+      city:"New York"
+
+    }
+
+  }
+  render()
+  {
+    return(
+      <>
+       <h1>{this.state.name}</h1>
+       <h1>{this.state.age}</h1>
+       <h1>{this.state.city}</h1>
+      </>
+    )
+  }
+}
+
+const r1=ReactDOM.createRoot(document.getElementById("root"))
+r1.render(<Sample/>)*/
+
+/*class Sample extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state = {empname:"azar"};
+    }
+  render()
+  {
+    return(
+      <h1>Welcome to the Application{this.state.empname}</h1>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+//React Events
+
+/*function Sample()
+{
+  alert("This is the main function..")
+
+return(
+  <button onClick={Sample}>ClickHere</button>
+)
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample />);*/
+
+//React Event using variable
+
+function Sample()
+{
+  const result=(pid)=>{
+    console.log(`You clicked ${pid}`)};
+    // alert({pid})
+  
+  return(
+    <>
+    <button onClick={()=>result('1001')}>ClikHere</button>
+    </>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)
