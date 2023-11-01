@@ -200,7 +200,7 @@ r1.render(<Sample />);*/
 
 //React Event using variable
 
-function Sample()
+/*function Sample()
 {
   const result=(pid)=>{
     console.log(`You clicked ${pid}`)};
@@ -213,4 +213,46 @@ function Sample()
   )
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Sample/>)
+r1.render(<Sample/>)*/
+
+//React Conditional Rendering
+
+/*function MissedGoal()
+{
+  return <h1>MISSED</h1>
+}
+function MadeGoal()
+{
+  return <h1>GOAL!!</h1>
+}
+function Goal(props)
+{
+  const isGoal=props.isGoal;
+  if(isGoal)
+  {
+    return <MadeGoal/>
+  }
+  else
+  {
+    return <MissedGoal/>
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Goal isGoal={false}/>)*/
+
+//React Conditional Statement
+
+function Sample1()
+{
+  var pid=parseInt(prompt("Enter the pid is::"))
+   if(pid==1001)
+   {
+     alert("Its is Equal")
+   }
+   else
+   {
+    alert("Its Not Equal")
+   }
+}
+const r2=ReactDOM.createRoot(document.getElementById('root'))
+r2.render(<Sample1 />)
