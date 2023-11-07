@@ -64,7 +64,7 @@ r1.render(myelem)*/
 
 //React List
 
-const myele=(
+/*const myele=(
   <ul>
     <li>list1</li>
     <li>list2</li>
@@ -73,4 +73,16 @@ const myele=(
   </ul>
 )
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(myele)
+r1.render(myele)*/
+
+//React Fragement Tag
+import './index.css';
+const myele=(
+  <>
+    <p className='s1'>This is Para 1</p>
+    <p>This is Para 2</p>
+  </>
+);
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(myele);
