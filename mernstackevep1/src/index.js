@@ -242,7 +242,7 @@ r1.render(<Goal isGoal={false}/>)*/
 
 //React Conditional Statement
 
-function Sample1()
+/*function Sample1()
 {
   var pid=parseInt(prompt("Enter the pid is::"))
    if(pid==1001)
@@ -255,4 +255,41 @@ function Sample1()
    }
 }
 const r2=ReactDOM.createRoot(document.getElementById('root'))
-r2.render(<Sample1 />)
+r2.render(<Sample1 />)*/
+
+//React Hooks
+
+/*import {useState} from 'react';
+function Counter(){
+  const [count,setCount]=useState(0);
+  return(
+    <div>
+      <p>Count::{count}</p>
+      <button onClick={()=>setCount(count+1)}>Increment</button>
+    </div>
+  )
+
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Counter/>)*/
+
+//React List
+
+function Car(props)
+{
+  return <li>This is Car Function{props.brand}</li>
+}
+function Garage(){
+  const list=['Ford','BMW','Audi']
+  return(
+    <>
+    <ul>
+        {list.map((var1)=><Car brand={var1}/>)}
+    </ul>
+    </>
+  )
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Garage/>)

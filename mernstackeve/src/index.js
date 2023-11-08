@@ -79,10 +79,22 @@ r1.render(myele)*/
 import './index.css';
 const myele=(
   <>
-    <p className='s1'>This is Para 1</p>
-    <p>This is Para 2</p>
+    <body>
+      <ul>
+        <li ><a href='' className='active'>Home</a></li>
+        <li><a href=''>About</a></li>
+        <li><a href=''>Contact</a></li>
+        <li><a href=''>Login</a></li>
+        </ul>
+        <div className='divstyle'>
+          <h1>Hello World!</h1>
+          <p>This is a paragraph.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit magnam dolorem ipsam temporibus nemo modi, suscipit soluta tempore. Fuga perspiciatis at sequi ipsam atque facilis magni nostrum totam aliquam vitae.</p>
+        </div>
+    </body>
   </>
-);
+)
+
 
 const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(myele);
