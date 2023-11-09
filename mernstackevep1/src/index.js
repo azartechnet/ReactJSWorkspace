@@ -276,7 +276,7 @@ r1.render(<Counter/>)*/
 
 //React List
 
-function Car(props)
+/*function Car(props)
 {
   return <li>This is Car Function{props.brand}</li>
 }
@@ -286,6 +286,30 @@ function Garage(){
     <>
     <ul>
         {list.map((var1)=><Car brand={var1}/>)}
+    </ul>
+    </>
+  )
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Garage/>)*/
+
+//React using key
+
+function Car(props)
+{
+  return <li>This is Car Function{props.brand}</li>
+}
+function Garage(){
+  const list=[
+    {'id':1,brand:'a1'},
+    {'id':2,brand:'a2'},
+    {'id':3,brand:'a3'}
+  ]
+  return(
+    <>
+    <ul>
+        {list.map((var1)=><Car key={var1.id} brand={var1.brand}/>)}
     </ul>
     </>
   )
