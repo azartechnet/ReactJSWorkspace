@@ -1,5 +1,6 @@
 import ReactDOM  from "react-dom/client";
 import React from "react";
+import ContactForm from "./ContactForm";
 
 /*function Sample()
 {
@@ -296,7 +297,7 @@ r1.render(<Garage/>)*/
 
 //React using key
 
-function Car(props)
+/*function Car(props)
 {
   return <li>This is Car Function{props.brand}</li>
 }
@@ -316,4 +317,7 @@ function Garage(){
 }
 
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Garage/>)
+r1.render(<Garage/>)*/
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<ContactForm/>)
