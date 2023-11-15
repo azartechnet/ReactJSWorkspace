@@ -1,3 +1,4 @@
+import { render } from '@testing-library/react';
 import React from 'react';
 import ReactDOM from 'react-dom/client'
 /*function Sample()
@@ -75,8 +76,8 @@ r1.render(myelem)*/
 const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(myele)*/
 
-//React Fragement Tag
-import './index.css';
+//React Fragement Tag or Component in File
+/*import './index.css';
 const myele=(
   <>
     <body>
@@ -97,4 +98,116 @@ const myele=(
 
 
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(myele);
+r1.render(myele);*/
+
+//React class component
+
+/*class Sample extends React.Component
+{
+  render()
+  {
+    return<h2>This is Class Component</h2>
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+//React props
+
+/*function Sample(props)//Using props argument passing
+{
+  return<h2>I am a {props.c1}</h2>
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+//r1.render(<Sample c1="welcome"/>)
+r1.render(<Sample c1="100"/>)*/
+
+//Multiple Component
+
+/*function Sample1()
+{
+  return <h2>I am in Sample 1 function component</h2>
+}
+function Sample2()
+{
+  return(
+    <>
+    <h1>This is Sample 2 function Component</h1>
+    <Sample1/>
+    </>
+  )
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample2/>)*/
+
+//Another Example Component in File
+
+/*import Sample from './App';
+
+const c1=document.getElementById('root')
+const r1=ReactDOM.createRoot(c1);
+r1.render(<Sample/>)*/
+
+//React State
+
+/*class Sample extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state={
+      name:"John",
+      age:34,
+      city:"New York"
+      };
+    }
+  
+  render(){
+     return(
+      <div>
+        <h1>{this.state.name}</h1>
+        <p>
+          I live in {this.state.city}, my age is {this.state.age}.
+        </p>
+      </div>
+     )
+  }
+}
+
+const c1=document.getElementById('root')
+const r1=ReactDOM.createRoot(c1)
+r1.render(<Sample/>)*/
+
+//Changing the State Object
+
+class Sample extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state={
+      name:"John",
+      age:34,
+      city:"New York"
+    };     
+  }
+  changeState=()=>{
+    //changing state object
+    this.setState({age:25});
+  }
+  render(){
+    return(
+      <div>
+        <h1>{this.state.name}</h1>
+        <p>
+          I live in {this.state.city}, my age is {this.state.age}.
+        </p>
+        <button type='button' onClick={this.changeState}>ClickHere</button>
+      </div>
+    )
+  }
+}
+const c1=document.getElementById('root')
+const r1=ReactDOM.createRoot(c1)
+r1.render(<Sample/>)
