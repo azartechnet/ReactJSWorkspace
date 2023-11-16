@@ -367,7 +367,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Component1 />);*/
 
 //With useContext()
-import { useState, createContext, useContext } from "react";
+/*import { useState, createContext, useContext } from "react";
 
 
 const UserContext = createContext();
@@ -406,4 +406,27 @@ function Component5() {
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Component1 />);
+root.render(<Component1 />);*/
+
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+import Login from "./pages/login";
+import Register from "./pages/register";
+import Home from "./pages/Home";
+import Layout from "./pages/Layout";
+
+export default function App()
+{
+  return(
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout/>}>
+          <Route index element={<Home/>}></Route>
+          <Route path="/register" element={<Register/>}></Route>
+          <Route path="/login" element={<Login/>}></Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<App/>);
