@@ -76,7 +76,7 @@ const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(myele)*/
 
 //React Fragement Tag
-import './index.css';
+/*import './index.css';
 const myele=(
   <>
     <body>
@@ -97,4 +97,47 @@ const myele=(
 
 
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(myele);
+r1.render(myele);*/
+
+//Class Component
+/*class Sample extends React.Component
+{
+  render()
+  {
+    return(
+      <div>
+        <h1>Welcome to the Class Component..</h1>
+      </div>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>);*/
+
+//class component using Constructor and super class
+
+class Sample extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state={productid:"1001"}
+  }
+  render()
+  {
+    return(
+      <h1>This Your ProductId is::{this.state.productid}</h1>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>);
+
+//Component Construtor
+//Props
+//Props in the Constructor
+//Component in Component
+//Component in File
+//React State
+//Changing the State Object
+//Events
