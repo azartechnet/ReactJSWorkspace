@@ -116,7 +116,7 @@ r1.render(<Sample/>);*/
 
 //class component using Constructor and super class
 
-class Sample extends React.Component
+/*class Sample extends React.Component
 {
   constructor(props)
   {
@@ -131,13 +131,120 @@ class Sample extends React.Component
   }
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Sample/>);
+r1.render(<Sample/>);*/
 
-//Component Construtor
-//Props
-//Props in the Constructor
-//Component in Component
+
+
+
+
 //Component in File
 //React State
 //Changing the State Object
 //Events
+
+//Component Construtor
+
+/*class  Sample extends React.Component
+{
+  constructor()
+  {
+    super();
+    this.state={productid:1001};
+  }
+  render()
+  {
+    return<h2>I am a Sample Function</h2>
+  }
+}
+
+const c1=ReactDOM.createRoot(document.getElementById('root'));
+c1.render(<Sample/>);*/
+
+//Example Props
+
+/*class Sample extends React.Component
+{
+  render()
+  {
+    return<h2>I am a {this.props.pid}</h2>
+  }
+}
+const c1=document.getElementById('root');
+const r1=ReactDOM.createRoot(c1);
+r1.render(<Sample pid="1001"/>)*/
+
+//Props in the Constructor
+
+/*class Sample extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+  }
+  render()
+  {
+    return<h2>This is Props function{this.props.pid}</h2>
+  }
+}
+const c1=document.getElementById('root');
+const r1=ReactDOM.createRoot(c1);
+r1.render(<Sample pid="1001"/>)*/
+
+//Component in Component
+
+/*class Sample1 extends React.Component
+{
+  render()
+  {
+    return<h2>I am Sample1!!!</h2>
+  }
+}
+class Sample2 extends React.Component
+{
+  render()
+  {
+    return(
+      <div>
+        <h1>This is Sample2</h1>
+        <Sample1/>
+      </div>
+    )
+  }
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample2 />)*/
+
+//Component in file
+
+/*import Sample from './App';
+
+const c1=document.getElementById('root');
+const r1=ReactDOM.createRoot(c1);
+r1.render(<Sample />)*/
+
+//React State
+class Sample extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state={
+      name:'John',
+      age:25,
+      city:'New York'
+    }
+  }
+  render()
+  {
+    return(
+      <div>
+        <h1>My name is {this.state.name}</h1>
+        <p>I live in {this.state.city}, I am {this.state.age} years old.</p>
+      </div>
+    )
+  }
+}
+const s1=document.getElementById('root');
+const r1=ReactDOM.createRoot(s1);
+r1.render(<Sample />);
