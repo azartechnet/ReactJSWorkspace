@@ -137,9 +137,8 @@ r1.render(<Sample/>);*/
 
 
 
-//Component in File
-//React State
-//Changing the State Object
+
+
 //Events
 
 //Component Construtor
@@ -224,7 +223,7 @@ const r1=ReactDOM.createRoot(c1);
 r1.render(<Sample />)*/
 
 //React State
-class Sample extends React.Component
+/*class Sample extends React.Component
 {
   constructor(props)
   {
@@ -247,4 +246,52 @@ class Sample extends React.Component
 }
 const s1=document.getElementById('root');
 const r1=ReactDOM.createRoot(s1);
-r1.render(<Sample />);
+r1.render(<Sample />);*/
+
+//Changing the State Object
+
+/*class Sample extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state={
+      pid:"1001",
+      pname:"apple",
+      pprice:10,
+      pquantity:10
+    };
+  }
+  changeValue=()=>{
+    this.setState({pname:"apple1"});
+  }
+
+  render()
+  {
+    return(
+      <div>
+        <h1>Product ID: {this.state.pid}</h1>
+        <h2>Product Name: {this.state.pname}</h2>
+        <h3>Product Price: {this.state.pprice}</h3>
+        <h4>Product Quantity: {this.state.pquantity}</h4>
+        <button onClick={this.changeValue}>Change Name</button>
+      </div>
+    )
+  }
+}
+const s1=ReactDOM.createRoot(document.getElementById('root'));
+s1.render(<Sample/>)*/
+
+//React Event
+
+function Sample()
+{
+  const shoot=()=>{
+    alert("Great Shot")
+  }
+  return(
+    <button onClick={shoot}>Take the shot</button>
+  );
+}
+const r1=ReactDOM.createRoot(document.getElementById("root"))
+r1.render(<Sample/>);
