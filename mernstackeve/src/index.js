@@ -181,7 +181,7 @@ r1.render(<Sample/>)*/
 
 //Changing the State Object
 
-class Sample extends React.Component
+/*class Sample extends React.Component
 {
   constructor(props)
   {
@@ -210,4 +210,49 @@ class Sample extends React.Component
 }
 const c1=document.getElementById('root')
 const r1=ReactDOM.createRoot(c1)
-r1.render(<Sample/>)
+r1.render(<Sample/>)*/
+
+//React Conditional Rendering
+
+/*function MissedGoal()
+{
+  return<h1>MISSED</h1>
+}
+function MadeGoal()
+{
+  return<h1>GOAL</h1>
+}
+function Goal(props)
+{
+  const isGoal=props.isGoal;
+  if(isGoal)
+  {
+    return<MadeGoal/>
+  }
+  else
+  {
+    return<MissedGoal/>
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Goal isGoal={true}/>)*/
+
+//React List
+function Car(props)
+{
+  return <li>I am a {props.brand}</li>
+}
+function Garage()
+{
+  const cars=["Ford","BMW","Audi"]
+  return(
+    <>
+    <ul>
+      {cars.map((car)=><Car brand={car}/>)}
+    </ul>
+    </>
+  )
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Garage />)
