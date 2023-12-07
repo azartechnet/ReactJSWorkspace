@@ -284,7 +284,7 @@ s1.render(<Sample/>)*/
 
 //React Event
 
-function Sample()
+/*function Sample()
 {
   const shoot=()=>{
     alert("Great Shot")
@@ -294,4 +294,69 @@ function Sample()
   );
 }
 const r1=ReactDOM.createRoot(document.getElementById("root"))
-r1.render(<Sample/>);
+r1.render(<Sample/>);*/
+
+//React List-1
+
+/*import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+function Car(props) {
+  return <li>I am a { props.brand }</li>;
+}
+
+function Garage() {
+  const cars = ['Ford', 'BMW', 'Audi'];
+  return (
+    <>
+	    <h1>Who lives in my garage?</h1>
+	    <ul>
+        {cars.map((car) => <Car brand={car} />)}
+      </ul>
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage />);*/
+
+//React List Using Keys
+
+/*function Car(props)
+{
+  return <li>I am a {props.brand}</li>
+}
+
+function Garage()
+{
+  const cars=[
+    {id:1,brand:"Ford"},
+    {id:2,brand:"BMW"},
+    {id:3,brand:"Audi"}
+  ]
+  return (
+    <>
+       <h1>Who lives in my garage??</h1> 
+       <ul>
+        {cars.map((car)=><Car key={car.id} brand={car.brand}/>)}
+       </ul>
+    </>
+  )
+}
+
+const root=ReactDOM.createRoot(document.getElementById('root'))
+root.render(<Garage />);*/
+
+//React Forms
+function Myform1(){
+  return(
+    <form>
+      <label>Enter UserName</label>
+      <input type="text" name="username"/>
+      <button type="submit">Submit</button>
+    </form>
+  )
+}
+
+const r1=ReactDOM.createRoot(document.getElementById("root"))
+r1.render(<Myform1/>)
