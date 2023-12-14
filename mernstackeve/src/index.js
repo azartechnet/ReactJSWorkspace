@@ -1,5 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter, Routes,Route } from 'react-router-dom';
+import Layout from './pages/Layout';
+import Blogs from './pages/Blogs';
+import Contact from './pages/Contact';
+import NoPage from './pages/NoPage';
+import Home from './pages/Home';
 /*function Sample()
 {
   return<h1>Welcome to the function</h1>
@@ -348,7 +354,7 @@ const root=ReactDOM.createRoot(document.getElementById('root'))
 root.render(<Garage />);*/
 
 //React Forms
-function Myform1(){
+/*function Myform1(){
   return(
     <form>
       <label>Enter UserName</label>
@@ -359,4 +365,80 @@ function Myform1(){
 }
 
 const r1=ReactDOM.createRoot(document.getElementById("root"))
-r1.render(<Myform1/>)
+r1.render(<Myform1/>)*/
+
+//React Hooks
+
+/*import ContactForm from './ContactForm';
+const r1=ReactDOM.createRoot(document.getElementById("root"))
+r1.render(<ContactForm/>)*/
+
+//React Hooks useEffects()
+
+/*function Timer()
+{
+  const [count,setCount]=useState(0);
+  useEffect(()=>{
+    setTimeout(()=>{
+    setCount((count)=>count+1)
+  },1000)
+})
+return <h1>I have rendered {count} time</h1>
+}
+const root=ReactDOM.createRoot(document.getElementById('root'))
+root.render(<Timer/>)*/
+
+//React Hooks useContext()
+
+/*function Component1()
+{
+  const [user,setUser]=useState("Mohamed");
+  return(
+    <>
+      <h1>{`Hello ${user}`}</h1>
+      <Component2 user={user}/>
+    </>
+  )
+}
+function Component2({user})
+{
+  return(
+    <>
+    <h1>Component2</h1>
+    <Component3 user={user}/>
+    </>
+  )
+}
+function Component3({user})
+{
+  return(
+    <>
+    <h1>Component-3</h1>
+    <h2>{`Hello ${user}`}</h2>
+    </>
+  )
+}
+
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<Component1/>)*/
+
+ //Routing Concepts
+
+ export default function App()
+ {
+  return(
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Layout/>}>
+        <Route index element={<Home/>}/>
+        <Route path="blogs" element={<Blogs/>}/>        
+        <Route path="contact" element={<Contact/>}/>
+        <Route path="*" element={<NoPage/>}/>
+      </Route>
+    </Routes>
+    </BrowserRouter>
+  )
+ }
+
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<App/>)
