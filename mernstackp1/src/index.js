@@ -346,7 +346,7 @@ function CounterExample() {
   
   //Keys Concepts
 
-  function Sample(props)
+  /*function Sample(props)
   {
     return (
       <>
@@ -375,4 +375,35 @@ function CounterExample() {
     )
   }
   const r1=ReactDOM.createRoot(document.getElementById('root'))
-  r1.render(<Sample2 />);
+  r1.render(<Sample2 />);*/
+
+  //Without using useContext()
+  import { useState,useContext, createContext } from "react";
+
+  const u1=createContext();
+
+function Component1() {
+  const [user, setUser] = useState("Jesse Hall");
+
+  return (
+    <>
+    <u1.Provider value={user}>
+      <h1>{`Hello ${user}!`}</h1>
+      <Component5/>
+      </u1.Provider>
+    </>
+  );
+}
+
+function Component5() {
+  const user=useContext(u1);
+  return (
+    <>
+      <h1>Component 5</h1>
+      <h2>{`Hello ${user} again!`}</h2>
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Component1 />);
