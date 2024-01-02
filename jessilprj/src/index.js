@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM  from "react-dom";
+import ReactDOM  from "react-dom/client";
 /*function Sample()
 {
     return <h1>Welcome to the React Application</h1>
@@ -47,8 +47,15 @@ ReactDOM.render(<App/>,document.getElementById('root'));*/
 
 //WithOut JSX
 
-const myElement = React.createElement('h1',{}, 'I do not use JSX!');
+/*const myElement = React.createElement('h1',{}, 'I do not use JSX!');
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(myElement);
+root.render(myElement);*/
+
+//Expression in JSX
+const name="Mohamed"
+const myelm=<h1>React is{5+5} time is better in UI Development{name}</h1>
+console.log(myelm)
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(myelm)
 
