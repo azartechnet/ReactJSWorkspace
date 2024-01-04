@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
+=======
+import { render } from '@testing-library/react';
+import React from 'react';
+>>>>>>> master
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes,Route } from 'react-router-dom';
 import Layout from './pages/Layout';
@@ -81,7 +86,11 @@ r1.render(myelem)*/
 const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(myele)*/
 
+<<<<<<< HEAD
 //React Fragement Tag
+=======
+//React Fragement Tag or Component in File
+>>>>>>> master
 /*import './index.css';
 const myele=(
   <>
@@ -105,11 +114,17 @@ const myele=(
 const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(myele);*/
 
+<<<<<<< HEAD
 //Class Component
+=======
+//React class component
+
+>>>>>>> master
 /*class Sample extends React.Component
 {
   render()
   {
+<<<<<<< HEAD
     return(
       <div>
         <h1>Welcome to the Class Component..</h1>
@@ -229,12 +244,60 @@ const r1=ReactDOM.createRoot(c1);
 r1.render(<Sample />)*/
 
 //React State
+=======
+    return<h2>This is Class Component</h2>
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+//React props
+
+/*function Sample(props)//Using props argument passing
+{
+  return<h2>I am a {props.c1}</h2>
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+//r1.render(<Sample c1="welcome"/>)
+r1.render(<Sample c1="100"/>)*/
+
+//Multiple Component
+
+/*function Sample1()
+{
+  return <h2>I am in Sample 1 function component</h2>
+}
+function Sample2()
+{
+  return(
+    <>
+    <h1>This is Sample 2 function Component</h1>
+    <Sample1/>
+    </>
+  )
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample2/>)*/
+
+//Another Example Component in File
+
+/*import Sample from './App';
+
+const c1=document.getElementById('root')
+const r1=ReactDOM.createRoot(c1);
+r1.render(<Sample/>)*/
+
+//React State
+
+>>>>>>> master
 /*class Sample extends React.Component
 {
   constructor(props)
   {
     super(props);
     this.state={
+<<<<<<< HEAD
       name:'John',
       age:25,
       city:'New York'
@@ -253,6 +316,29 @@ r1.render(<Sample />)*/
 const s1=document.getElementById('root');
 const r1=ReactDOM.createRoot(s1);
 r1.render(<Sample />);*/
+=======
+      name:"John",
+      age:34,
+      city:"New York"
+      };
+    }
+  
+  render(){
+     return(
+      <div>
+        <h1>{this.state.name}</h1>
+        <p>
+          I live in {this.state.city}, my age is {this.state.age}.
+        </p>
+      </div>
+     )
+  }
+}
+
+const c1=document.getElementById('root')
+const r1=ReactDOM.createRoot(c1)
+r1.render(<Sample/>)*/
+>>>>>>> master
 
 //Changing the State Object
 
@@ -262,6 +348,7 @@ r1.render(<Sample />);*/
   {
     super(props);
     this.state={
+<<<<<<< HEAD
       pid:"1001",
       pname:"apple",
       pprice:10,
@@ -281,10 +368,30 @@ r1.render(<Sample />);*/
         <h3>Product Price: {this.state.pprice}</h3>
         <h4>Product Quantity: {this.state.pquantity}</h4>
         <button onClick={this.changeValue}>Change Name</button>
+=======
+      name:"John",
+      age:34,
+      city:"New York"
+    };     
+  }
+  changeState=()=>{
+    //changing state object
+    this.setState({age:25});
+  }
+  render(){
+    return(
+      <div>
+        <h1>{this.state.name}</h1>
+        <p>
+          I live in {this.state.city}, my age is {this.state.age}.
+        </p>
+        <button type='button' onClick={this.changeState}>ClickHere</button>
+>>>>>>> master
       </div>
     )
   }
 }
+<<<<<<< HEAD
 const s1=ReactDOM.createRoot(document.getElementById('root'));
 s1.render(<Sample/>)*/
 
@@ -346,10 +453,55 @@ function Garage()
        <ul>
         {cars.map((car)=><Car key={car.id} brand={car.brand}/>)}
        </ul>
+=======
+const c1=document.getElementById('root')
+const r1=ReactDOM.createRoot(c1)
+r1.render(<Sample/>)*/
+
+//React Conditional Rendering
+
+/*function MissedGoal()
+{
+  return<h1>MISSED</h1>
+}
+function MadeGoal()
+{
+  return<h1>GOAL</h1>
+}
+function Goal(props)
+{
+  const isGoal=props.isGoal;
+  if(isGoal)
+  {
+    return<MadeGoal/>
+  }
+  else
+  {
+    return<MissedGoal/>
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Goal isGoal={true}/>)*/
+
+//React List
+function Car(props)
+{
+  return <li>I am a {props.brand}</li>
+}
+function Garage()
+{
+  const cars=["Ford","BMW","Audi"]
+  return(
+    <>
+    <ul>
+      {cars.map((car)=><Car brand={car}/>)}
+    </ul>
+>>>>>>> master
     </>
   )
 }
 
+<<<<<<< HEAD
 const root=ReactDOM.createRoot(document.getElementById('root'))
 root.render(<Garage />);*/
 
@@ -442,3 +594,7 @@ function Component3({user})
 
  const r1=ReactDOM.createRoot(document.getElementById('root'))
  r1.render(<App/>)
+=======
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Garage />)
+>>>>>>> master
