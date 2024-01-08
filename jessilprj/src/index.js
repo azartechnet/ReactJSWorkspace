@@ -135,3 +135,51 @@ r2.render(<Sample/>);*/
 }
 const r3 = ReactDOM.createRoot(document.getElementById('root'));
 r3.render(<Sample pid="1001"/>);*/
+
+//Component in Component
+
+/*function Sample()
+{
+    return <h2>I am in Sample</h2>
+}
+function Azar()
+{
+    return(
+    <>
+       <h1>Who lives in my House</h1>
+       <Sample/>
+    </>
+    )
+}
+
+const r3=ReactDOM.createRoot(document.getElementById("root"))
+r3.render(<Azar/>)*/
+
+//Component in File
+
+/*import App from "./App";
+
+const r3=ReactDOM.createRoot(document.getElementById("root"))
+r3.render(<App/>)*/
+
+//Constructor Example
+
+class Sample extends React.Component
+{
+    constructor(){
+        super();
+        this.state={
+            name:"Ali"
+            }
+    }
+    render() {
+        return (
+            <div>
+                My Name is {this.state.name}
+            </div>
+            );
+            }
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)
