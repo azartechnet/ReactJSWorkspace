@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM  from "react-dom/client";
+import ReactDOM from "react-dom/client";
 /*function Sample()
 {
     return <h1>Welcome to the React Application</h1>
@@ -164,7 +164,7 @@ r3.render(<App/>)*/
 
 //Constructor Example
 
-class Sample extends React.Component
+/*class Sample extends React.Component
 {
     constructor(){
         super();
@@ -182,4 +182,91 @@ class Sample extends React.Component
 }
 
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Sample/>)
+r1.render(<Sample/>)*/
+
+//React State
+
+/*class Sample extends React.Component
+{
+    constructor(props)
+    {
+        super(props);
+        this.state={
+            empid:1001,
+            ename:'John',
+            salary:5000
+            };
+
+        }
+        render(){
+            return(
+                <div>
+                <h1>My EmployeeId is {this.state.empid}</h1>
+                <p>My EmployeeName is {this.state.ename}</p>
+                <p>My Salary is::{this.state.salary}</p>
+                </div>
+               
+            )
+        }
+    }
+    const r1=ReactDOM.createRoot(document.getElementById("root"))
+    r1.render(<Sample/>)*/
+
+//Changing the state object
+
+/*class Sample extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            emp: {
+                id: 1002,
+                name: "Jane",
+                city: "New York"
+            },
+            showData: false
+        };
+    }
+    toggleData = () => {
+        this.setState({ showData: !this.state.showData })
+    }
+    render() {
+        let data;
+        if (this.state.showData) {
+            data = <div><b>Employee Id:</b>{this.state.emp.id} , <b> Name: </b> {this.state.emp.name}, <b>City: </b> {this.state.emp.city} </div>;
+        }
+        else { data = "No Data Available" }
+        return (
+            <div>
+                <button onClick={this.toggleData}>Show/Hide Employee Details</button><h3> Employee Details</h3>
+                {data}
+
+            </div>
+        )
+    }
+}
+const r1 = ReactDOM.createRoot(document.getElementById("root"))
+r1.render(<Sample />)*/
+
+//Using Constructor
+
+class Header extends React.Component
+{
+    text="welcome"
+    constructor(props){
+        super(props);
+        this.state={f1:'red'}
+        
+    }
+    render(){
+        return(
+            <h3 style={{color : this.state.f1}}>{this.props.text}</h3>
+                );
+    }
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Header/>)
+
+
+
+
