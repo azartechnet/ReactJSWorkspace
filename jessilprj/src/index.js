@@ -249,7 +249,8 @@ r1.render(<Sample />)*/
 
 //Using Constructor
 
-class Header extends React.Component
+/*import React from "react";
+class Header extends Component
 {
     text="welcome"
     constructor(props){
@@ -265,7 +266,79 @@ class Header extends React.Component
 }
 
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Header/>)
+r1.render(<Header/>)*/
+
+//React Event
+
+/*function Football()
+{
+    const shoot=()=>{
+        alert("Goal Shooted")
+    }
+    return(
+        <>
+        <button onClick={shoot}>TakeShoot</button>
+        </>
+    )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football/>)*/
+
+/*function Football() {
+    const shoot = (a) => {
+      alert(a);
+    }
+  
+    return (
+      <button onClick={() => shoot("Goal!")}>Take the shot!</button>
+    );
+  }
+  
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(<Football />);*/
+
+//Arrow Function: Sending the event object manually
+
+/*function Football() {
+  const shoot = (a,b) => {
+    alert(b.type);
+    alert(a)
+	
+  }
+
+  return (
+    <button onClick={(e) => shoot("Goal!", e)}>Take the shot!</button>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Football />);*/
+
+//Conditional Rendering
+function MissedGoal()
+{
+    return <h1>MISSED</h1>
+}
+function MadeGoal()
+{
+    return<h1>GOAL</h1>
+}
+function Goal(props)
+{
+    const isGoal=props.isGoal;
+    if(isGoal==true){
+        return <MadeGoal/>
+    }
+    else{
+        return <MissedGoal/>
+        }
+}  
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Goal isGoal={true}/>);
+
+  
+
+
 
 
 
