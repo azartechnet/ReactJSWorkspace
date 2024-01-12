@@ -107,9 +107,73 @@ r1.render(myelem);*/
 
 //Importing and exporting
 
-import App from "./App";
+/*import App from "./App";
 
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<App/>)
+r1.render(<App/>)*/
 
+//Function Componenets
+/*function Product()
+{
+  return(
+    <>
+    <h1>Welcome to the  function</h1>
+    </>
+  )
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Product/>)*/
+
+//Function props
+/*function Product(props)
+{
+  return(
+    <h2>The name of the product is {props.name},and 
+    it costs ${props.price}.It has been rated with {props.rating}/5 stars.</h2>
+  )
+}
+// product({name:"Laptop", price:1349, rating:4})
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Product name="Iphone" price={11876} rating={4.5} />)*/
+
+//class component
+
+//import { Component } from "react";
+/*class Product extends React.Component
+{
+  render(){
+    return (
+      <div>
+        <h2>{this.props.name}</h2>
+        <p>Price:{this.props.price}$</p>
+        <p>Rating :{this.props.rating}/5</p>
+
+      </div>
+    )
+
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Product name="azar" price="1000" rating="4.5"/>)*/
+
+//Component in Component
+
+function Category()
+{
+  return(
+    <h1>This is Category Component</h1>
+  )
+}
+function Product()
+{
+  return(
+    <>
+    <h1>This is Product Component</h1>
+    <Category/>
+    </>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Product/>)
 
