@@ -159,7 +159,7 @@ r1.render(<Product name="azar" price="1000" rating="4.5"/>)*/
 
 //Component in Component
 
-function Category()
+/*function Category()
 {
   return(
     <h1>This is Category Component</h1>
@@ -176,4 +176,196 @@ function Product()
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(<Product/>)
+*/
+//Component Constructor
 
+//If there is a constructor() function in your component this function will be called the
+//component get initiated
+//When Using constructor function to inheritance of the parent Component(React.Component)
+//by including the super() statement
+
+/*class Sample extends React.Component
+{
+  constructor()
+  {
+    super();
+    this.state={empid:1001}
+  }
+  render()
+  {
+    return<h2>This is Sample Application{this.state.empid}</h2>
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+/*class Sample extends React.Component
+{
+  render()
+  {
+    return(
+      <>
+      <h1>{this.props.empName}</h1>
+      <h2>{this.props.empid}</h2>
+      </>
+    )
+  }
+}
+const r1=document.getElementById('root')
+const empName="John Doe"
+const empid=1003
+const element=<Sample empName={empName} empid={empid} />
+ReactDOM.createRoot(r1).render(element)*/
+
+//Props in the Constructor
+/*class Sample extends React.Component
+{
+  constructor(props){
+    super(props);
+  }
+  render()
+  {
+    return(
+      <>
+      <h1>{this.props.model}</h1>
+      </>
+    )
+  }
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample model="Ford"/>)*/
+
+//Component in Component using class
+
+/*class Sample1 extends React.Component
+{
+  render()
+  {
+    return(
+      <>
+      <h1>This is First Component</h1>
+      </>
+    )
+  }
+}
+class Sample2 extends React.Component
+{
+  render(){
+    return(
+      <>
+      <h2>This is Second Component</h2>
+      <Sample1/>
+      </>
+    )
+  }
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample2/>)*/
+
+//React State
+
+/*class Sample extends React.Component
+{
+  constructor(props){
+    super(props);
+    this.state={
+     empid:1001,
+     ename:"John",
+     salary:5000
+    }
+}
+render()
+{
+  return(
+    <>
+    <h1>This is State Concepts</h1>
+    <p>
+      Employee ID : {this.state.empid}
+      <br />
+      Name        : {this.state.ename}
+      <br />
+      Salary      : {this.state.salary}
+    </p>
+    </>
+  )
+}
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+//Changing the state Object
+
+/*class Sample extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state={
+      empid:"1001",
+      empname:"azar",
+      designation:"IT"
+
+    }
+  }
+    changeValue=()=>{
+      //changing single value of the object
+        this.setState({empname:"mohamed"})     
+    }
+    render()
+    {
+      return(
+        <div>
+          <h1>My {this.state.empid}</h1>
+          <h2>MY {this.state.empname}</h2>
+          <h2>MY {this.state.designation}</h2>
+       
+        <button type="button" onClick={this.changeValue}>Change Value</button>
+        </div>
+      )
+    }
+  }
+
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Sample/>)*/
+
+  //React Event
+
+  /*function Football(){
+    const shoot=()=>{
+      alert("Ball is Shooted")
+    }
+    return (
+      <div>
+        <button onClick={shoot} >Shoot Ball</button>
+      </div>
+      );
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Football />);*/
+
+  //React Event Arguments
+
+  
+
+
+
+  
+  function Football() {
+    const shoot = (e) => {
+      console.log(e.currentTarget.innerText);
+      alert("Ball is Shooted " + e.currentTarget.innerText + " Time");
+    };
+  
+    return (
+      <div>
+        <button onClick={shoot.bind(null, "Morning")}>Shoot Ball Morning</button><br />
+        <button onClick={shoot.bind(null, "Afternoon")}>Shoot Ball Afternoon</button><br />
+        <button onClick={shoot.bind(null, "Night")}>Shoot Ball Night</button>
+      </div>
+    );
+  }
+  
+  ReactDOM.createRoot(document.getElementById("root")).render(<Football />);

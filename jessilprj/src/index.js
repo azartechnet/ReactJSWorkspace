@@ -315,7 +315,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Football />);*/
 
 //Conditional Rendering
-function MissedGoal()
+/*function MissedGoal()
 {
     return <h1>MISSED</h1>
 }
@@ -334,9 +334,51 @@ function Goal(props)
         }
 }  
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Goal isGoal={true}/>);
+r1.render(<Goal isGoal={true}/>);*/
 
+//React HOOKS(Important Concepts)
+
+/*useState-It's a Hook that allows you to add React state to function components.
+In other words, it’s a way for us to use state in our functional component */
+
+/*import {useState} from "react";
+function Counter()
+{
+    const [count,setCount]=useState(0);
+    return(
+        <div>
+            <p>Count:{count}</p>
+            <button onClick={()=>setCount(count+1)}>Increment</button>
+        </div>
+    )
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Counter/>)*/
+
+//React List(Map())
+
+function Car(props)
+{
+    return <li>I am a{props.b1}</li>
+}
+function Garage()
+{
+    const cars=["Ford","BMW","Audi"]
+    return(
+        <>
+        <h1>Who lives in my garage?</h1>
+        <ul>
+            {cars.map((c1)=>{
+                return <Car b1={c1} key={c1} />
+                })}
+        </ul>
+        </>
+    )
+}
   
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Garage/>)
 
 
 
