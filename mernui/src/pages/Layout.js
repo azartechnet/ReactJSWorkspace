@@ -7,20 +7,18 @@ const Layout = () => {
             <a class="navbar-brand" href="#">Title</a>
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="#">Home</a>
+                <Link to="/">Home</Link>
                 </li>
                 <li>
-                    <a href="#">Link</a>
+                <Link to="/Login">Login</Link>
                 </li>
                 <li>
-                    <a href="#">Link</a>
+                <Link to="/Register">Register</Link>
                 </li>
                 <li>
-                    <a href="#">Link</a>
+                <Link to="/contact">Contact</Link>
                 </li>
-                <li>
-                    <a href="#">Link</a>
-                </li>
+                
             </ul>
         </div>
         
