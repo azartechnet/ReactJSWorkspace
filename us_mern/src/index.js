@@ -347,13 +347,8 @@ r1.render(<Sample/>)*/
   r1.render(<Football />);*/
 
   //React Event Arguments
-
-  
-
-
-
-  
-  function Football() {
+ 
+  /*function Football() {
     const shoot = (e) => {
       console.log(e.currentTarget.innerText);
       alert("Ball is Shooted " + e.currentTarget.innerText + " Time");
@@ -369,3 +364,102 @@ r1.render(<Sample/>)*/
   }
   
   ReactDOM.createRoot(document.getElementById("root")).render(<Football />);
+
+*/
+  //Another Programs in Argument for Event
+  /*function Football()
+  {
+    const shoot=(a)=>{
+      alert(a);
+    }
+    return(
+      <button onClick={()=>shoot("Good")}>Take the Shoot</button>
+    )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Football/>)*/
+
+  //Another Program for Conditional Rendering
+
+  /*function MissedGoal()
+  {
+    return(
+      <h2 style={{color:"red"}}>Missed Goal!</h2>
+      )
+  }
+  function MadeGoal()
+  {
+    return(
+      <h2 style={{color:"green"}}>Made Goal!</h2>
+    )
+  }
+  function Goal(props)
+  {
+    const isGoal=props.isGoal;
+    if(isGoal)
+    {
+      return<MadeGoal/>
+    }
+    return<MissedGoal/>
+  }
+  
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Goal isGoal={false}/>)*/
+
+  //React Lists
+
+  /*function Sample(props)
+  {
+    // return<li>I am a {props.brand}</li>
+    return<li>I am a {props.empname}</li>
+  }
+  function Garage()
+  {
+    //const cars=['Ford','BMW','Audi']
+    const empname=["mohamed","chandana","azar"]
+    return (
+      <ul>
+        {
+        empname.map((c1)=>
+        {
+          return <Sample empname={c1} key={c1} />
+        })
+        }
+      </ul>
+    )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Garage/>)*/
+
+  //React List Using Keys
+
+  function Sample(props)
+  {
+    // return<li>I am a {props.brand}</li>
+    return(
+      <>
+       <li>I am a {props.e1}</li>
+      <li>I am a {props.c1}</li>
+      </>
+     
+    )
+  }
+  function Garage()
+  {
+    //const cars=['Ford','BMW','Audi']
+    const empname=[
+      {id:101,e1:"mohamed"},{id:102,e1:"chandana"},{id:103,e1:"azar"}
+    ]
+    return(
+      <>
+      <h1>Welcome to Employee Details</h1>
+      <ul>
+        {empname.map((c1)=><Sample key={c1.id} e1={c1.e1}/>)}
+      </ul>
+      </>
+    )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Garage/>)
+
+  //React in Keys and list
