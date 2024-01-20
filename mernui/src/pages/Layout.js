@@ -3,10 +3,10 @@ const Layout = () => {
     return (
        <>
         
-        <div class="navbar">
-            <a class="navbar-brand" href="#">Title</a>
-            <ul class="nav navbar-nav">
-                <li class="active">
+        <div className="navbar">
+            <a className="navbar-brand" href="#">Title</a>
+            <ul className="nav navbar-nav">
+                <li className="active">
                 <Link to="/">Home</Link>
                 </li>
                 <li>
