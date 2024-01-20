@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 /*function Sample()
 {
@@ -341,6 +341,12 @@ r1.render(<Goal isGoal={true}/>);*/
 /*useState-It's a Hook that allows you to add React state to function components.
 In other words, it’s a way for us to use state in our functional component */
 
+   /*The first time we call useState, React will create a new state variable
+    with the initial value of 0 and a function to update that variable.
+    The returned array is like an object with two properties: count and setCount.
+    We can destructure them as follows: [count, setCount] = useState(0)*/
+
+
 /*import {useState} from "react";
 function Counter()
 {
@@ -358,7 +364,7 @@ r1.render(<Counter/>)*/
 
 //React List(Map())
 
-function Car(props)
+/*function Car(props)
 {
     return <li>I am a{props.b1}</li>
 }
@@ -378,8 +384,59 @@ function Garage()
 }
   
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Garage/>)
+r1.render(<Garage/>)*/
 
+//React Forms
+
+/*function MyForm()
+{
+    return(
+        <form>
+            <label>UserName</label>
+            <input type="text"/>
+            <label>Password</label>
+            <input type="text"/>
+            <input type="submit" value="Login"/>
+        </form>
+    )
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<MyForm/>)*/
+
+//React useState
+
+function ContactForm()
+{
+    const [name,setName]=useState('');
+    const [email,setEmail]=useState('');
+    function handleSubmit(e)
+    {
+        e.preventDefault();
+        console.log("User Name is "+ name + " and User Email is " + email);
+        alert("User Name is "+ name + " and User Email is " + email)
+        }
+        return (
+            <>
+               <form>
+                <h2>Contact Us</h2>
+                <label>Name:</label><br />
+                <input type='text' value={name} onChange={(e)=>{setName
+                (e.target.value)}}/><br />
+                <label>Email:</label><br />
+                <input type='text' value={email} 
+                onChange={(e)=>{setEmail(e.target.value)}}/>
+
+                <br />
+                <button onClick={handleSubmit}>Submit</button>
+                </form>
+               
+            </>
+            );
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<ContactForm/>)
 
 
 
