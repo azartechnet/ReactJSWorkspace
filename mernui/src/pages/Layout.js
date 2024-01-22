@@ -4,7 +4,7 @@ const Layout = () => {
        <>
         
         <div className="navbar">
-            <a className="navbar-brand" href="#">Title</a>
+            <a className="navbar-brand" href="#">E-KART</a>
             <ul className="nav navbar-nav">
                 <li className="active">
                 <Link to="/">Home</Link>
