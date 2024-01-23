@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import ReactDOM from "react-dom/client";
 /*function Sample()
 {
@@ -457,7 +457,7 @@ r1.render(<MyTextArea/>)*/
 
 //React dropdownlist
 
-function SelectBoxExample()
+/*function SelectBoxExample()
 {
     const[selectedOption,setSelectedOption]=useState('');
     
@@ -482,8 +482,46 @@ function SelectBoxExample()
     }
 
     const r1=ReactDOM.createRoot(document.getElementById('root'))
-    r1.render(<SelectBoxExample/>)
-        
+    r1.render(<SelectBoxExample/>)*/
+
+    //React useEffect()
+
+    /*function Timer()
+    {
+        const [count,setCount]=useState(0);
+        useEffect(()=>{
+            const timerID = setTimeout(() =>
+            setCount(count + 1), 1000);
+            return () => clearTimeout(timerID);
+            }, []);
+            return (
+                <div>
+                    {count}
+                    </div>
+                    )
+                    }
+      
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Timer/>)*/
+
+//React useEffect Example2
+
+function HookCounterOne()
+{
+    const [count,setCount]=useState(0);
+    useEffect(()=>{
+        document.title=`You clicked ${count} times`;
+    },[count]);
+    return(
+        <div>
+            <button onClick={()=>setCount((prevCount)=>prevCount+1)}>
+                Click{count}times{" "}
+            </button>
+        </div>
+    )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<HookCounterOne/>)
 
 
 
