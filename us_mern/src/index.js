@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM  from "react-dom/client";
 
 /*function Sample()
@@ -433,7 +433,7 @@ r1.render(<Sample/>)*/
 
   //React List Using Keys
 
-  function Sample(props)
+  /*function Sample(props)
   {
     // return<li>I am a {props.brand}</li>
     return(
@@ -460,6 +460,94 @@ r1.render(<Sample/>)*/
     )
   }
   const r1=ReactDOM.createRoot(document.getElementById('root'))
-  r1.render(<Garage/>)
+  r1.render(<Garage/>)*/
 
   //React in Keys and list
+
+  //React Forms
+
+  /*function Myform()
+  {
+    return(
+      <form>
+        <label>UserName</label>
+        <input type="text"/>
+        <label>Password</label>
+        <input type="password"/>
+        <input type="submit" value="Login"/>
+      </form>
+    )
+  }
+
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Myform/>)*/
+
+  //React HOOKS
+  /*function ContactForm()
+  {
+    const [name,setName]=useState('')
+    const [email,setEmail]=useState('')
+    const [message,setMessage] = useState('');
+    const handleSubmit=(e)=>{
+      alert("Your message has been submitted")
+      e.preventDefault();
+      //Perform form submission logic here
+      console.log('Form Submitted with data')
+      console.log("Name::",name)
+      console.log("Email::",email)
+      console.log("Message::",message);
+      //You can also reset the form fields after submission
+      setName('')
+      setEmail('')      
+      setMessage('')
+      }
+      return (
+
+        <div className='contact-form'>
+          <h2>Contact Us</h2>
+          <form onSubmit={handleSubmit}>
+            <label>Name:</label>
+            <br />
+            <input type="text" value={name} onChange={e=> setName(e.target.value)}/>
+            <br />
+            <label>Email:</label>
+            <br />
+            <input type="email" value={email} onChange={e => setEmail(e.target.value)}/>
+            <br />
+            <label>Message:</label>
+            <br />
+            <textarea cols="30" rows="10" value={message} onChange={e=> setMessage(e.target.value)}></textarea>
+              <br />
+              <button type="submit">Send</button>
+              </form>
+              </div>
+              );
+              }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<ContactForm/>)*/
+
+  //React dropdown list to change the value
+
+  function SelectBoxExample()
+  {
+    const [selectedOption,setSelectedOption]=useState('')
+    const handleSelectChange=(e)=>{
+      setSelectedOption(e.target.value)
+    };
+    return(
+      <div>
+        <p>Please select an option from below:</p>
+        <select name="options" id="option-list" onChange={handleSelectChange}>
+          <option value="">None</option>
+          <option value="Mr.">Mr.</option>
+          <option value="Mrs.">Mrs.</option>
+          <option value="Miss">Miss</option>
+          <option value="Dr.">Doctor/Professor Dr.</option>
+          </select>
+          <p>You selected: {selectedOption}</p>
+          </div>
+          
+    )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<SelectBoxExample/>)
