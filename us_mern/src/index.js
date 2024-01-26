@@ -620,7 +620,7 @@ r1.render(<Sample/>)*/
 
   //React Implemented useContext()
 
-  import { createContext,useContext } from "react";
+  /*import { createContext,useContext } from "react";
 
   const UserContext=createContext();
 
@@ -655,4 +655,31 @@ r1.render(<Sample/>)*/
   }
 
   const r1=ReactDOM.createRoot(document.getElementById('root'))
-  r1.render(<Component1/>)
+  r1.render(<Component1/>)*/
+
+  //React Router
+
+  import { BrowserRouter,Routes,Route } from "react-router-dom";
+  import Layout from "./pages/Layout";
+  import Home from "./pages/Home";
+  import Login from "./pages/Login";
+  import Register from "./pages/Register";
+  import Contact from "./pages/Contact";
+
+  export default function App(){
+    return(
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />}/>
+          <Route path="/login" element={<Login />}/>
+          <Route path="/register" element={<Register />}/>
+          <Route path="/contact" element={<Contact />}/>
+          </Route>
+      </Routes>
+      </BrowserRouter>
+    )
+  }
+
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<App/>)
