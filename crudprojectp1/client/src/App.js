@@ -12,7 +12,28 @@ function App(){
     //Edit
     const[newFoodName,setNewFoodName]=useState('');
 
+    useEffect(()=>{
+        Axios.get('http://localhost:3001/read')
+        .then((response)=>{
+            setFoodList(response.data);
+        })
+    },[])
 
+    const addFoodData=()=>{
+        Axios.post('http://localhost:3001/insert',
+        {
+            foodName:foodName,
+            description:description
+        });   
+    };
+    const UpdateFoodData=(id)=>{
+        Axios.put('http://localhost:3001/update',{
+            id:id,newFoodName:newFoodName})
+        }
+    const DeleteData=(id)=>{
+        Axios.delete(`http://localhost:3001/delete?id=${id}`)
+    };
+    
 
 
     return(
