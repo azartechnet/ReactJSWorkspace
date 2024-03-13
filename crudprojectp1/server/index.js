@@ -29,16 +29,17 @@ app.post("/insert",async(req,res)=>{
     }
 });
 
-app.get("/read",async(req,res)=>{
- FoodModel.find({},(err,result)=>{
-    if(err){
-        res.send(err)
-    }
-    res.send(result);
- });
-   
-});
-
+app.get("/reads",async(req,res)=>{
+    FoodModel.find({},(err,result)=>{
+       if(err){
+           res.send(err)
+           
+       }
+       // console.log(result);
+       res.send(result);
+    });
+      
+   });
 app.put("/update",async(req,res)=>{
 
     const newFoodName=req.body.newFoodName;
@@ -60,6 +61,6 @@ app.delete("/delete/:id", async(req,res) => {
     await FoodModel.findByIdAndRemove(id).exec();
     res.send("deleted");
 });
-app.listen(3001, () =>{
+app.listen(3002, () =>{
     console.log("server is running");
 });
