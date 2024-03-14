@@ -12,13 +12,13 @@ function App() {
   //Edit
   const[newFoodName, setNewFoodName]=useState('');
 
-  useEffect(() => {
+  /*useEffect(() => {
     Axios.get('http://localhost:3002/reads')
     .then((response) => {
       setFoodList(response.data);
     })
 
-  }, [])
+  }, [])*/
 
   const addFoodData = () =>{
     Axios.post("http://localhost:3002/insert",
@@ -28,7 +28,7 @@ function App() {
     });
   };
 
-const UpdateFoodData = (id) =>{
+/*const UpdateFoodData = (id) =>{
     Axios.put("http://localhost:3002/update", {
       id:id, newFoodName:newFoodName})
   }
@@ -36,7 +36,7 @@ const UpdateFoodData = (id) =>{
   const DeleteData = (id) =>{
     Axios.delete(`http://localhost:3002/delete/${id}`)
       
-  };
+  };*/
 
 
   return (
@@ -63,7 +63,7 @@ const UpdateFoodData = (id) =>{
             return    <tr>
        <td>{val.foodName}</td>
        <td>{val.description}</td>  
-       <td>
+       {/* <td>
         <input type="text" placeholder="update foodname"
         onChange={(event) => {
           setNewFoodName(event.target.value);
@@ -72,7 +72,7 @@ const UpdateFoodData = (id) =>{
         </td>
         <td>
           <button onClick={()=> DeleteData(val._id)}>Delete</button>
-          </td> 
+          </td>  */}
         
   
         </tr>
