@@ -29,7 +29,7 @@ app.post("/insert",async(req,res)=>{
     }
 });
 
-/*app.get("/reads",async(req,res)=>{
+app.get("/reads",async(req,res)=>{
     FoodModel.find({},(err,result)=>{
        if(err){
            res.send(err)
@@ -40,7 +40,8 @@ app.post("/insert",async(req,res)=>{
     });
       
    });
-app.put("/update",async(req,res)=>{
+
+/*app.put("/update",async(req,res)=>{
 
     const newFoodName=req.body.newFoodName;
     const id=req.body.id;

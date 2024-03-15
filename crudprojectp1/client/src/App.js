@@ -12,13 +12,13 @@ function App() {
   //Edit
   const[newFoodName, setNewFoodName]=useState('');
 
-  /*useEffect(() => {
+  useEffect(() => {
     Axios.get('http://localhost:3002/reads')
     .then((response) => {
       setFoodList(response.data);
     })
 
-  }, [])*/
+  }, [])
 
   const addFoodData = () =>{
     Axios.post("http://localhost:3002/insert",
