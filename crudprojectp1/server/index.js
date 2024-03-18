@@ -41,7 +41,7 @@ app.get("/reads",async(req,res)=>{
       
    });
 
-/*app.put("/update",async(req,res)=>{
+    app.put("/update",async(req,res)=>{
 
     const newFoodName=req.body.newFoodName;
     const id=req.body.id;
@@ -61,7 +61,7 @@ app.delete("/delete/:id", async(req,res) => {
     const id=req.params.id;
     await FoodModel.findByIdAndRemove(id).exec();
     res.send("deleted");
-});*/
+});
 app.listen(3002, () =>{
     console.log("server is running");
 });
