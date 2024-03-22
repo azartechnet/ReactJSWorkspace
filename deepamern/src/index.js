@@ -92,7 +92,7 @@ root.render(myelem)*/
 
     //Conditional Rendering
 
-    const x=9
+    /*const x=9
     let text="hello";
     if(x>10){
       text="goodbye";
@@ -107,4 +107,55 @@ root.render(myelem)*/
       )
     }
     const r1=ReactDOM.createRoot(document.getElementById("root"));
-    r1.render(<Myelm/>)
+    r1.render(<Myelm/>)*/
+
+    //Class components
+
+    /*class Sample extends React.Component
+    {
+      render(){
+        return(
+          <div>
+            Helloworld
+          </div>
+        )
+      }
+    }
+const r2=ReactDOM.createRoot(document.getElementById('root'))
+r2.render(<Sample />)*/
+
+//Function components with arguments
+
+/*function Sample(props)
+{
+  return(
+    <>
+    <h1>Welcome to the Function Arguments</h1>
+    <p>{props.name}</p>
+    <p>{props.age}</p>
+    </>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById("root"))
+r1.render(<Sample name={"John"} age={34}/>)*/
+
+//Component in component
+
+function Sample()
+{
+  return(
+    <h1>This is First Component</h1>
+  )
+}
+function Sample2()
+{
+  return(
+    <>
+    <h2>This is Second Component</h2>
+    <Sample/>
+    </>
+  )
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample2/>)
