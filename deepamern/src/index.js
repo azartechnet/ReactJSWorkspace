@@ -141,7 +141,7 @@ r1.render(<Sample name={"John"} age={34}/>)*/
 
 //Component in component
 
-function Sample()
+/*function Sample()
 {
   return(
     <h1>This is First Component</h1>
@@ -158,4 +158,31 @@ function Sample2()
 }
 
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Sample2/>)
+r1.render(<Sample2/>)*/
+
+//Component in files or importing and exporting
+
+/*import Sample from "./App";
+
+
+const r1=ReactDOM.createRoot(document.getElementById('root'));
+r1.render(<Sample />);*/
+
+//Component Constructor
+
+class Sample extends React.Component
+{
+  constructor() {
+    super();
+    this.state={empid:1001}
+  }
+  render(){
+    return (
+      <h1>I am Sample::{this.state.empid}</h1>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>);
+
+
