@@ -1,5 +1,5 @@
 import React from "react";
-import  ReactDOM from "react-dom/client";
+import  ReactDOM from "react-dom";
 
 /*function Sample()
 {
@@ -169,7 +169,7 @@ const r1=ReactDOM.createRoot(document.getElementById('root'));
 r1.render(<Sample />);*/
 
 //Component Constructor
-
+/*
 class Sample extends React.Component
 {
   constructor() {
@@ -183,6 +183,79 @@ class Sample extends React.Component
   }
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Sample/>);
+r1.render(<Sample/>);*/
+
+//React State
+
+/*class Sample extends React.Component
+{
+  constructor(props)
+  {
+     super(props);
+     this.state = {
+      empid:1001,
+      ename:"mohamed",
+      salary:5000
+  }
+}
+  render()
+  {
+    return(
+      <div>
+        <h1>My EmployeeId is:;{this.state.empid}</h1>
+        <p>My EmployeeName is::{this.state.ename}</p>
+        <p>My Salary is::{this.state.salary}</p>
+      </div>
+    )
+  }
+}
+
+const r1=ReactDOM.createRoot(document.getElementById("root"));
+r1.render(<Sample />);*/
+
+//Changing the state object
+
+class Sample extends React.Component
+{
+  constructor(props)
+  {
+     super(props);
+     this.state = {
+       emp:{
+          id:1002,
+          name:"azar",
+          city:"Lahore"
+       },
+       showData:false
+  };
+}
+showdata(){
+  this.setState({showData:true });
+}
+ hideData(){
+   this.setState({showData:false});
+ }
+  render()
+   {
+     let data ;
+      if (this.state.showData== true) 
+      {
+         data= <div><b>City :</b>{this.state.emp.city}<b>Id::</b>{this.state.emp.id}<br/>
+           <button onClick={this.hideData.bind(this)} >Hide Data</button></div>;
+      }
+      else
+       {
+         data= <button onClick={this.showdata.bind(this)} >Show Data</button>;
+          }
+            return (
+               <div className="App">
+                <h1>Employee Details </h1>
+                 {data}
+              </div>
+              );
+               }
+};
+ReactDOM.render(<Sample /> ,document.getElementById('root'));
+
 
 

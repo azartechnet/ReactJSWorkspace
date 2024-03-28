@@ -124,7 +124,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
   //Constructor Example
 
-  class Sample extends React.Component
+  /*class Sample extends React.Component
   {
     constructor(props)
     {
@@ -148,6 +148,132 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
      }
   }
   const r1=ReactDOM.createRoot(document.getElementById('root'))
-  r1.render(<Sample />)
+  r1.render(<Sample />)*/
 
   //React State
+
+  /*class Sample extends React.Component
+  {
+    constructor(props)
+    {
+      super(props);
+      this.state={
+        empid:1001,
+        empname:"mohamed",
+        salary:5000
+      }
+    }
+    render()
+    {
+      return(
+        <div>
+          <h1>MyEmployeeId is::{this.state.empid}</h1>
+          <p>My EmployeeName is::{this.state.empname}</p>
+          <p>My Salary is::{this.state.salary}</p>
+        </div>
+      )
+    }
+  }
+  const root=ReactDOM.createRoot(document.getElementById("root"))
+  root.render(<Sample/>)*/
+
+  //Changing the state object
+
+  /*class Sample extends React.Component
+  {
+    constructor(props)
+    {
+      super(props);
+      this.state={
+        emp:{
+          id:1001,
+          name:"Mohamed",
+           city:"Cairo"
+        },
+        showData:false
+      }
+    }
+    toggleData=()=>{
+      this.setState({showData:!this.state.showData})
+    }
+    render()
+    {
+      let data;
+      if(this.state.showData){
+         data=<div><b>EmployeeId::</b>{this.state.emp.id}</div>
+      }
+      else{
+        data="No data Avaliable";
+      }
+      return (
+        <div>
+          <button onClick={this.toggleData}>Toggle Data</button>
+          {data}
+        </div>
+      )
+    }
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'));
+  r1.render(<Sample />);*/
+
+  //React Event
+
+  /*function Football()
+  {
+    const shoot=()=>console.log("Shoot");
+    const pass=()=>console.log("Pass");
+    const dribble=()=>console.log("Dribble");
+    return(
+       <div>
+         <h2>Football Action</h2>
+          <button onClick={shoot}>Shoot</button>
+          <button onClick={pass}>Pass</button>
+          <button onClick={dribble}>Dribble</button>
+
+       </div>
+        );
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'));
+  r1.render(<Football/>)*/
+
+  //Arrow Function:Sending the event  object to a method
+
+  /*function Football(){
+    const shoot=(a,b)=>{
+      alert(b.type);
+      alert(a)
+    }
+    return(
+       <button onClick={(e)=>shoot("Goal!!",e)}>Take the Shoot</button>
+    )
+  }
+  const r=ReactDOM.createRoot(document.getElementById('root'));
+  r.render(<Football/>)*/
+
+  //Conditional Rendering
+
+  function MissedGoal()
+  {
+    return <h1>MISSED</h1>
+  }
+  function MadeGoal()
+  {
+    return <h1>GOAL</h1>
+  }
+  function Goal(props)
+  {
+    const isGoal=props.isGoal;
+    if (isGoal==true)
+    {
+      return <MadeGoal />
+    }
+    else
+    {
+      return <MissedGoal/>
+    }
+  }
+  const r1=ReactDOM.createRoot(document.getElementById( 'root' ) );
+  r1.render(<Goal  isGoal ={Math.random() >0.5} />)
+
+
+  //React HOOKS
