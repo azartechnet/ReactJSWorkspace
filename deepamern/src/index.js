@@ -1,5 +1,5 @@
-import React from "react";
-import  ReactDOM from "react-dom";
+import React, { Component } from "react";
+import  ReactDOM from "react-dom/client";
 
 /*function Sample()
 {
@@ -215,7 +215,7 @@ r1.render(<Sample />);*/
 
 //Changing the state object
 
-class Sample extends React.Component
+/*class Sample extends React.Component
 {
   constructor(props)
   {
@@ -255,7 +255,87 @@ showdata(){
               );
                }
 };
-ReactDOM.render(<Sample /> ,document.getElementById('root'));
+ReactDOM.render(<Sample /> ,document.getElementById('root'));*/
 
+//Using Constructor
 
+/*class Header extends Component
+{
+  text="Welcome"
+  constructor(props){
+    super(props);
+    this.state={f1:'red'}
+  }
+  render()
+  {
+    return(
+      <h3 style={{color:this.state.f1}}>{this.props.text}</h3>
+    )
+  }
+}
 
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Header  text='Hello World' />);*/
+
+//React Event
+
+/*function Football()
+{
+  const shoot=()=>{
+    alert("Goal Shooted")
+  }
+  return(
+    <>
+     <button onClick={shoot}>Shoot</button>
+    </>
+  )
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football/>)*/
+
+/*function Football()
+{
+  const shoot=(a)=>{
+    alert(a)
+  }
+  return(
+    <button onClick={()=>shoot("Goal!!")}>ClickHere</button>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football/>)*/
+
+/*function Football(){
+  const shoot=(a,b)=>{
+    alert(b.type);
+    alert(a)
+  }
+  return(
+    <button onClick={(e)=>shoot("Goal!!",e)}>ClickHere</button>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football/>)*/
+
+//Conditional Rendering
+
+function MissedGoal()
+{
+  return<h1>MISSED</h1>
+}
+function MadeGoal()
+{
+  return<h1>GOAL</h1>
+}
+function Goal(props)
+{
+  const isGoal=props.isGoal;
+  if (isGoal==true) {
+    return <MadeGoal />
+  } else {
+    return <MissedGoal />
+  }
+}
+const r1 = ReactDOM.createRoot(document.getElementById("root"));
+r1.render(<Goal isGoal={Math.random() > 0.5} />);
