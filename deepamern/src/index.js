@@ -320,7 +320,7 @@ r1.render(<Football/>)*/
 
 //Conditional Rendering
 
-function MissedGoal()
+/*function MissedGoal()
 {
   return<h1>MISSED</h1>
 }
@@ -338,4 +338,20 @@ function Goal(props)
   }
 }
 const r1 = ReactDOM.createRoot(document.getElementById("root"));
-r1.render(<Goal isGoal={Math.random() > 0.5} />);
+r1.render(<Goal isGoal={Math.random() > 0.5} />);*/
+
+//React Construtor
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+  render() {
+    return (
+      <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+    );
+  }
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Header />);

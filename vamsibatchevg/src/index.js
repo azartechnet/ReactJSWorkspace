@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 
 /*function Sample()
@@ -252,7 +252,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
   //Conditional Rendering
 
-  function MissedGoal()
+  /*function MissedGoal()
   {
     return <h1>MISSED</h1>
   }
@@ -273,7 +273,108 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
     }
   }
   const r1=ReactDOM.createRoot(document.getElementById( 'root' ) );
-  r1.render(<Goal  isGoal ={Math.random() >0.5} />)
+  r1.render(<Goal  isGoal ={Math.random() >0.5} />)*/
 
 
   //React HOOKS
+
+  import {useState} from 'react';
+
+  /*function Counter()
+  {
+    const [count,setCount] = useState(0);
+    return(
+      <div>
+        <p>Count:{count}</p>
+        <button onClick={()=>setCount(count+1)}>Increment</button>
+      </div>
+    )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'));
+  r1.render(<Counter />);*/
+
+  //React List(Map)
+
+  /*function Car(props)
+  {
+    return <li>I am a {props.b1}</li>
+  }
+  function Garage()
+  {
+    const cars=["Ford","BMW","Audi"]
+    return(
+      <>
+      <h1>Who lives in my garage</h1>
+      <ul>
+        {cars.map((c1)=>{
+          return<Car b1={c1} key={c1}/>
+        })}
+      </ul>
+      </>
+    )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById("root"))
+  r1.render(<Garage />)*/
+
+  //React Form
+
+  /*function MyForm()
+  {
+    return(
+      <form>
+        <label>UserName</label>
+        <input type="text"/>
+        <label>Password</label>
+        <input type="password" />
+        <input type="submit" value="Submit" />
+      </form>
+    )
+  }
+
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<MyForm/>)*/
+
+  //React useEffect()
+
+  /*function Timer()
+  {
+    const [count,setCount]=useState(0);
+    useEffect(()=>{
+      const timerID=setInterval(()=>setCount(count+1),1000)
+
+         return () => clearInterval(timerID)//clean up the interval when component is unmount
+
+          },[count])
+          return (
+            <>
+            Time: {count}
+            </>
+             );
+           }
+           const root = ReactDOM.createRoot(document.getElementById("root"));
+           root.render(<Timer />);*/
+
+  //React  useContext and Provider
+
+  import { createContext,useContext } from "react";
+
+  const UserContext=createContext();
+
+  function Component1()
+  {
+    const [user,setUser]=useState("Mohamed");
+    return (
+      <UserContext.Provider   value={user}>
+        <Component2/ >
+      </UserContext.Provider>
+    )
+  }
+  function Component2()
+   {
+     const user=useContext(UserContext);
+     return <h1>{user}</h1>
+      }
+  
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+       root.render(<Component1/>)
+  
