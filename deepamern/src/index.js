@@ -341,7 +341,7 @@ const r1 = ReactDOM.createRoot(document.getElementById("root"));
 r1.render(<Goal isGoal={Math.random() > 0.5} />);*/
 
 //React Construtor
-class Header extends React.Component {
+/*class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {favoritecolor: "red"};
@@ -354,4 +354,28 @@ class Header extends React.Component {
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Header />);
+root.render(<Header />);*/
+
+//React List
+
+function Car(props)
+{
+  return <li>I am a {props.b1}</li>
+}
+function Garage()
+{
+  const cars=["Ford","BMW","Audi"]
+  return(
+    <>
+       <h1>Who lives in my garage??</h1>
+       <ul>
+        {cars.map((c1)=>{
+          return<Car b1={c1} key={c1}/>
+        })}
+       </ul>
+    </>
+  )
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Garage/>)
