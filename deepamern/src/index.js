@@ -358,7 +358,7 @@ root.render(<Header />);*/
 
 //React List
 
-function Car(props)
+/*function Car(props)
 {
   return <li>I am a {props.b1}</li>
 }
@@ -378,4 +378,113 @@ function Garage()
 }
 
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Garage/>)
+r1.render(<Garage/>)*/
+
+//React Form
+
+
+/*function MyForm() {
+  return (
+    <form>
+      <label>Enter your name</label>
+        <input type="text" />
+      
+      <label>Enter your pass:</label>
+      <input type="password"/>
+      <input type="submit" value="Login" className="btn btn-primary"/>
+    </form>
+  )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<MyForm />);*/
+
+//React Hooks
+
+import { useState } from "react";
+
+/*function Counter()
+{
+  const [count,setCount]=useState(0);
+
+  return(
+    <>
+    <div>
+      <p>Count::{count}</p>
+      <button onClick={()=> setCount(count+1)} >Increment</button>
+    </div>
+    </>
+  )
+}
+
+const r1=ReactDOM.createRoot(document.querySelector("#root"));
+ r1.render(<Counter/>)*/
+
+ /*function ContactForm()
+ {
+  const [name , setName] = useState("");
+   const [email , setEmail ] = useState("");
+   function handleSubmit(e)
+   {
+     alert("UserName is:"+name+"and User Email"+email);
+   }
+   return(
+    <>
+    <form>
+      <h1>Contact</h1>
+      <label>Name:</label>
+      <input type="text" value={name} onChange={(e)=>{setName(e.target.value)}}></input><br/>
+      <label>Email:</label>
+      <input type="email" value={email} onChange={(e)=>{setEmail(e.target.value)}}></input><br/>
+      <button type="submit" onClick={handleSubmit}>Submit</button>
+    </form>
+    </>
+   )
+ }
+ const  root2= ReactDOM.createRoot(document.getElementById("root") );
+ root2.render(<ContactForm />);*/
+
+ //React Text Area
+
+ /*function MyTextArea()
+ {
+  const[value,setValue]=React.useState("Hello World!");
+  return (
+    <>
+      <textarea value={value} onChange={(e)=>setValue(e.target.value)}></textarea>
+     <p>{value}</p>
+    </>
+  )
+
+ }
+ const root3 = ReactDOM.createRoot(document.querySelector("#root"));
+ root3.render(<MyTextArea />);*/
+
+ //React dropdownlist
+
+function SelectBoxExample()
+{
+    const[selectedOption,setSelectedOption]=useState('');
+    
+    const handleSelectChange=(e)=>{
+        console.log(`Option selected: ${e.target.value}`);
+        setSelectedOption(e.target.value)
+        };
+        return (
+            <>
+            <label for="cars">Choose a car:</label>
+            <select id="cars" name="cars" onChange={handleSelectChange}>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+                </select>
+                {selectedOption && `You selected ${selectedOption}.` }
+                </>
+                );
+               
+        
+    }
+
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<SelectBoxExample/>)
