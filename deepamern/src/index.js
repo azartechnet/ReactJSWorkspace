@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import  ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom/client";
 
 /*function Sample()
 {
@@ -10,23 +10,23 @@ const r1=document.getElementById("root");
 const root = ReactDOM.createRoot(r1);
  root.render(<Sample />)*/
 
- //Basic Rendering
+//Basic Rendering
 
- /*const App=()=>{
+/*const App=()=>{
 
-  return (
-    <div>
-      <h1>Welcome  to our application!</h1>
-       <p>This is a paragraph.</p>
-    </div>
-  )
+ return (
+   <div>
+     <h1>Welcome  to our application!</h1>
+      <p>This is a paragraph.</p>
+   </div>
+ )
 
- }
- const r1=document.getElementById("root");
+}
+const r1=document.getElementById("root");
 const root = ReactDOM.createRoot(r1);
- root.render(<App />)*/
+root.render(<App />)*/
 
- //Dynamic Rendering
+//Dynamic Rendering
 
 /*const App=()=>{
   const username="mohamed";
@@ -53,74 +53,74 @@ root.render(myelem)*/
   const root=ReactDOM.createRoot(document.getElementById('root'));
    root.render(myelem)*/
 
-   //React List
+//React List
 
-   /*const myele=()=>(
+/*const myele=()=>(
 
-    <div>
-      <ul>
-       <li>list1</li>
-       <li>List2</li>
-       <li>List3</li>
-    </ul>
-    </div>
-   
-   )
-   const root=ReactDOM.createRoot(document.getElementById('root'));
-    root.render(myelem)*/
+ <div>
+   <ul>
+    <li>list1</li>
+    <li>List2</li>
+    <li>List3</li>
+ </ul>
+ </div>
+ 
+)
+const root=ReactDOM.createRoot(document.getElementById('root'));
+ root.render(myelem)*/
 
-    //fragmenttag
-    
-    /*import './index.css';
-    const App=()=>{
-      return (
-        <>
-           <h1>This is heading tag</h1>
-           <p>This is paragraph tag</p>
-           <form>
-            <label>UserName</label>
-            <input type='text'/>
-            <label>Password</label>
-            <input type="password"/>
-            <input type='submit' value='Login'/>
-           </form>
-        </>
-      )
-    }
-    const r1=ReactDOM.createRoot(document.getElementById("root"));
-    r1.render(<App/>);*/
+//fragmenttag
 
-    //Conditional Rendering
+/*import './index.css';
+const App=()=>{
+  return (
+    <>
+       <h1>This is heading tag</h1>
+       <p>This is paragraph tag</p>
+       <form>
+        <label>UserName</label>
+        <input type='text'/>
+        <label>Password</label>
+        <input type="password"/>
+        <input type='submit' value='Login'/>
+       </form>
+    </>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById("root"));
+r1.render(<App/>);*/
 
-    /*const x=9
-    let text="hello";
-    if(x>10){
-      text="goodbye";
-    }else if(x==10){
-      text="ten"
-    }else{
-      text="x is less than 10"
-    }
-    const Myelm=()=>{
-      return (
-        <div>{text} world!</div>
-      )
-    }
-    const r1=ReactDOM.createRoot(document.getElementById("root"));
-    r1.render(<Myelm/>)*/
+//Conditional Rendering
 
-    //Class components
+/*const x=9
+let text="hello";
+if(x>10){
+  text="goodbye";
+}else if(x==10){
+  text="ten"
+}else{
+  text="x is less than 10"
+}
+const Myelm=()=>{
+  return (
+    <div>{text} world!</div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById("root"));
+r1.render(<Myelm/>)*/
 
-    /*class Sample extends React.Component
-    {
-      render(){
-        return(
-          <div>
-            Helloworld
-          </div>
-        )
-      }
-    }
+//Class components
+
+/*class Sample extends React.Component
+{
+  render(){
+    return(
+      <div>
+        Helloworld
+      </div>
+    )
+  }
+}
 const r2=ReactDOM.createRoot(document.getElementById('root'))
 r2.render(<Sample />)*/
 
@@ -401,7 +401,7 @@ root.render(<MyForm />);*/
 
 //React Hooks
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 /*function Counter()
 {
@@ -420,49 +420,49 @@ import { useState } from "react";
 const r1=ReactDOM.createRoot(document.querySelector("#root"));
  r1.render(<Counter/>)*/
 
- /*function ContactForm()
- {
-  const [name , setName] = useState("");
-   const [email , setEmail ] = useState("");
-   function handleSubmit(e)
-   {
-     alert("UserName is:"+name+"and User Email"+email);
-   }
-   return(
-    <>
-    <form>
-      <h1>Contact</h1>
-      <label>Name:</label>
-      <input type="text" value={name} onChange={(e)=>{setName(e.target.value)}}></input><br/>
-      <label>Email:</label>
-      <input type="email" value={email} onChange={(e)=>{setEmail(e.target.value)}}></input><br/>
-      <button type="submit" onClick={handleSubmit}>Submit</button>
-    </form>
-    </>
-   )
- }
- const  root2= ReactDOM.createRoot(document.getElementById("root") );
- root2.render(<ContactForm />);*/
-
- //React Text Area
-
- /*function MyTextArea()
- {
-  const[value,setValue]=React.useState("Hello World!");
-  return (
-    <>
-      <textarea value={value} onChange={(e)=>setValue(e.target.value)}></textarea>
-     <p>{value}</p>
-    </>
+/*function ContactForm()
+{
+ const [name , setName] = useState("");
+  const [email , setEmail ] = useState("");
+  function handleSubmit(e)
+  {
+    alert("UserName is:"+name+"and User Email"+email);
+  }
+  return(
+   <>
+   <form>
+     <h1>Contact</h1>
+     <label>Name:</label>
+     <input type="text" value={name} onChange={(e)=>{setName(e.target.value)}}></input><br/>
+     <label>Email:</label>
+     <input type="email" value={email} onChange={(e)=>{setEmail(e.target.value)}}></input><br/>
+     <button type="submit" onClick={handleSubmit}>Submit</button>
+   </form>
+   </>
   )
+}
+const  root2= ReactDOM.createRoot(document.getElementById("root") );
+root2.render(<ContactForm />);*/
 
- }
- const root3 = ReactDOM.createRoot(document.querySelector("#root"));
- root3.render(<MyTextArea />);*/
+//React Text Area
 
- //React dropdownlist
+/*function MyTextArea()
+{
+ const[value,setValue]=React.useState("Hello World!");
+ return (
+   <>
+     <textarea value={value} onChange={(e)=>setValue(e.target.value)}></textarea>
+    <p>{value}</p>
+   </>
+ )
 
-function SelectBoxExample()
+}
+const root3 = ReactDOM.createRoot(document.querySelector("#root"));
+root3.render(<MyTextArea />);*/
+
+//React dropdownlist
+
+/*function SelectBoxExample()
 {
     const[selectedOption,setSelectedOption]=useState('');
     
@@ -487,4 +487,85 @@ function SelectBoxExample()
     }
 
     const r1=ReactDOM.createRoot(document.getElementById('root'))
-    r1.render(<SelectBoxExample/>)
+    r1.render(<SelectBoxExample/>)*/
+
+//React useEffects
+/*function Timer() {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    setTimeout(() => {
+      setCount((count) => count + 1);
+    }, 1000);
+  });
+  return <h1>I have rendered {count} times!</h1>;
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Timer />);*/
+
+/*function Timer() {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    let timer = setTimeout(() => {
+    setCount((count) => count + 1);
+  }, 2000);
+  return () => clearTimeout(timer)
+  }, []);
+  return <h1>I've rendered {count} times!</h1>;
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Timer />);*/
+
+//React with out using useContext
+
+/*function Component1()
+{
+  const [user,setUser]=useState("mohamed");
+  return(
+    <>
+    <h1>{`Hello ${user}`}</h1>
+    <Component2 user={user}/>
+    </>
+  )
+}
+function Component2({user})
+{
+  return(
+    <>
+    <h1>Component2</h1>
+    <p>{user}profile</p>
+    </>
+  )
+}
+
+const r1=ReactDOM.createRoot(document.querySelector("#root"));
+r1.render(<Component1/>);*/
+
+//React useContext()
+
+import { createContext ,useContext } from "react";
+
+const UserContext=createContext()
+
+function Component1()
+{
+  const [user,setUser]=useState("Mohamed");
+  return(
+    <UserContext.Provider value={user}>
+      <h1>{`Hello ${user}`}</h1>
+      <Component2/>
+    </UserContext.Provider>
+  )
+}
+function Component2()
+{
+  const user=useContext(UserContext);
+  return(
+    <>
+    <h1>{`Component2 ${user}`}</h1>
+    </>
+  )
+}
+
+const r1=ReactDOM.createRoot(document.querySelector("#root"));
+r1.render(<Component1 />)
+
