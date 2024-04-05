@@ -542,7 +542,7 @@ r1.render(<Component1/>);*/
 
 //React useContext()
 
-import { createContext ,useContext } from "react";
+/*import { createContext ,useContext } from "react";
 
 const UserContext=createContext()
 
@@ -567,5 +567,40 @@ function Component2()
 }
 
 const r1=ReactDOM.createRoot(document.querySelector("#root"));
-r1.render(<Component1 />)
+r1.render(<Component1 />)*/
 
+//React Router
+
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+import Blogs from "./pages/Blogs";
+import NoPage from "./pages/NoPage";
+import { BrowserRouter, Route,Routes } from "react-router-dom";
+
+
+export default function App()
+{
+  return(
+    <BrowserRouter>
+      <Routes>
+
+       <Route path="/" element= {<Layout />}>
+
+        <Route  index element = {<Home />}/>
+
+         <Route path="/Blogs" element={<Blogs/>}/>
+
+         <Route path="/Contact" element={<Contact/>}/>
+
+         <Route path="/NoPage" element={<NoPage/>}/>
+
+       </Route>
+
+      </Routes>
+    </BrowserRouter>
+  )
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<App/>)
