@@ -1,22 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
-const CreatePost = () => {
+const EditPost = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
+    const { id } = useParams();
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        axios.post('http://localhost:3001/addpost', { title, body })
-            .then(res => {
-                console.log(res.data);
-                navigate('/');
-            })
-            .catch(err => {
+    useEffect(() => {
+        const fetchPost = async () => {
+            try {
+                const res = await axios.get(`http://localhost:3001/getpost/${id}`);
+                setTitle(res.data[0].title);
+                setBody(res.data[0].body);
+            } catch (err) {
                 console.error(err);
-            });
+            }
+        };
+        fetchPost();
+    }, [id]);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await axios.put(`http://localhost:3001/updatepost/${id}`, { title, body });
+            navigate('/');
+        } catch (err) {
+            console.error(err);
+        }
     };
 
     return (
@@ -25,7 +37,7 @@ const CreatePost = () => {
                 <div className="col-md-8">
                     <div className="card">
                         <div className="card-header">
-                            <h3>Create a New Post</h3>
+                            <h3>Edit Post</h3>
                         </div>
                         <div className="card-body">
                             <form onSubmit={handleSubmit}>
@@ -51,7 +63,7 @@ const CreatePost = () => {
                                         onChange={(e) => setBody(e.target.value)}
                                     />
                                 </div>
-                                <button type="submit" className="btn btn-primary mt-3">Create Post</button>
+                                <button type="submit" className="btn btn-primary mt-3">Update Post</button>
                             </form>
                         </div>
                     </div>
@@ -61,4 +73,4 @@ const CreatePost = () => {
     );
 };
 
-export default CreatePost;
+export default EditPost;

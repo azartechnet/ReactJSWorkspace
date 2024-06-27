@@ -71,12 +71,13 @@ app.get('/getpost/:id', (req, res) => {
     });
 });
 
+
 // Update post
 app.put('/updatepost/:id', (req, res) => {
-    let newTitle = req.body.title;
-    let newBody = req.body.body;
-    let sql = `UPDATE posts SET title = '${newTitle}', body = '${newBody}' WHERE id = ${req.params.id}`;
-    db.query(sql, (err, result) => {
+    const { id } = req.params;
+    const { title, body } = req.body;
+    const sql = `UPDATE posts SET title = ?, body = ? WHERE id = ?`;
+    db.query(sql, [title, body, id], (err, result) => {
         if (err) throw err;
         res.send('Post updated...');
     });
@@ -84,8 +85,9 @@ app.put('/updatepost/:id', (req, res) => {
 
 // Delete post
 app.delete('/deletepost/:id', (req, res) => {
-    let sql = `DELETE FROM posts WHERE id = ${req.params.id}`;
-    db.query(sql, (err, result) => {
+    const { id } = req.params;
+    const sql = `DELETE FROM posts WHERE id = ?`;
+    db.query(sql, [id], (err, result) => {
         if (err) throw err;
         res.send('Post deleted...');
     });

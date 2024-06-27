@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const PostsList = () => {
     const [posts, setPosts] = useState([]);
@@ -8,6 +9,11 @@ const PostsList = () => {
         axios.get('http://localhost:3001/getposts')
             .then(res => setPosts(res.data));
     }, []);
+
+    const handleDelete = async (id) => {
+        await axios.delete(`http://localhost:3001/deletepost/${id}`);
+        setPosts(posts.filter(post => post.id !== id));
+    };
 
     return (
         <div className="container mt-5">
@@ -18,6 +24,7 @@ const PostsList = () => {
                         <th>ID</th>
                         <th>Title</th>
                         <th>Body</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,6 +33,10 @@ const PostsList = () => {
                             <td>{post.id}</td>
                             <td>{post.title}</td>
                             <td>{post.body}</td>
+                            <td>
+                                <Link to={`/edit/${post.id}`} className="btn btn-warning btn-sm mr-2">Edit</Link>
+                                <button onClick={() => handleDelete(post.id)} className="btn btn-danger btn-sm">Delete</button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
