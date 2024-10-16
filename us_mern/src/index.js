@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import ReactDOM  from "react-dom/client";
 
 /*function Sample()
@@ -528,7 +528,7 @@ r1.render(<Sample/>)*/
 
   //React dropdown list to change the value
 
-  function SelectBoxExample()
+  /*function SelectBoxExample()
   {
     const [selectedOption,setSelectedOption]=useState('')
     const handleSelectChange=(e)=>{
@@ -550,4 +550,136 @@ r1.render(<Sample/>)*/
     )
   }
   const r1=ReactDOM.createRoot(document.getElementById('root'))
-  r1.render(<SelectBoxExample/>)
+  r1.render(<SelectBoxExample/>)*/
+
+  //React useEffect
+
+  /*function Timer()
+  {
+    const [count,setCount]=useState(10);
+    useEffect(()=>{
+      const timer = setTimeout(() => {
+        setCount(c => c + 1);
+        }, 1000);
+        return () => clearTimeout(timer);
+        });
+        return (
+          <>
+          {count}
+          </>
+        )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Timer/>)*/
+
+  //React useEffect Example 2
+
+  /*function HookCounterOne()
+  {
+    const [count,setCount]=useState(0)
+    useEffect(()=>{
+      document.title=`You clicked ${count} times`
+      })
+      return (
+        <div>
+          <p>You clicked {count} times</p>
+          <button onClick={()=>setCount(count+1)}>Click me</button>
+        </div>
+        
+        
+        );
+        
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<HookCounterOne/>)*/
+
+  //React without using useContext()
+
+ /* function Component1()
+  {
+    const[user,setUser]=useState("mohamed")
+    return(
+      <>
+      <h1>{`Hello ${user}`}</h1>
+      <Component2 user={user}/>
+      </>
+    )
+  }
+  function Component2({user})
+  {
+    return(
+      <>
+      <h1>Component2</h1>
+      <p>{user}profile</p>
+      </>
+    )
+  }
+
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Component1/>)*/
+
+  //React Implemented useContext()
+
+  /*import { createContext,useContext } from "react";
+
+  const UserContext=createContext();
+
+  function Component1()
+  {
+    const [user,setUser]=useState("Mohamed");
+    return(
+      <UserContext.Provider value={{user}}>
+        <h1>{`Hello ${user}`}</h1>
+        <Component2/>
+      </UserContext.Provider>
+    )
+  }
+  function Component2()
+  {
+    const{user}=useContext(UserContext);
+    return (
+      <div>
+        <h3>Profile_Component2:{user} Profile</h3>
+        <Component3/>
+      </div>
+      );
+  }
+  function Component3()
+  {
+    const{user}=useContext(UserContext);
+    return (
+      <div>
+        <h3>Profile_Component3:{user} Profile</h3>
+      </div>
+      );
+  }
+
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Component1/>)*/
+
+  //React Router
+
+  import { BrowserRouter,Routes,Route } from "react-router-dom";
+  import Layout from "./pages/Layout";
+  import Home from "./pages/Home";
+  import Login from "./pages/Login";
+  import Register from "./pages/Register";
+  import Contact from "./pages/Contact";
+
+  export default function App(){
+    return(
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />}/>
+          <Route path="/login" element={<Login />}/>
+          <Route path="/register" element={<Register />}/>
+          <Route path="/contact" element={<Contact />}/>
+          </Route>
+      </Routes>
+      </BrowserRouter>
+    )
+  }
+
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<App/>)

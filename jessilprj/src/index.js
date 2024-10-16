@@ -550,7 +550,7 @@ r1.render(<Component1/>)*/
 
 //React useContext()
 
-import { createContext,useContext } from "react";
+/*import { createContext,useContext } from "react";
 
 const UserContext=createContext();
 
@@ -585,6 +585,34 @@ function Component3()
 }
 
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Component1/>)
+r1.render(<Component1/>)*/
 
+//React Router Concepts
 
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+import  Home from './pages/Home';
+import  Contact from './pages/Contact';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Layout from './pages/Layout';
+
+export default function App()
+{
+    return (
+        <BrowserRouter>
+        <Routes>
+
+            <Route path="/" element={<Layout/>}>
+                <Route index element={<Home />}/>
+                <Route path="contact" element={<Contact />}/>
+                <Route path="login" element={<Login/>}/>
+                <Route path="register" element={<Register/>}/>
+                </Route>
+                </Routes>
+        </BrowserRouter>
+        );
+
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<App/>);
