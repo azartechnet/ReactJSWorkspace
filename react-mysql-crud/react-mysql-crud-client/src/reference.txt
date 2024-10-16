@@ -1,11 +1,14 @@
 
 mkdir react-mysql-crud
 cd react-mysql-crud
-npm install -y
+npm init -y
 npm install express mysql body-parser cors
 npm install axios
 creating a file server.js
 After Creating BackEnd Project
+Creating  FrontEnd Project
+npx create-react-app  react-mysql-crud-client
+cd react-mysql-crud-client
 npm install react-router-dom
 npm install react-router-bootstrap
 npm install react-bootstrap
