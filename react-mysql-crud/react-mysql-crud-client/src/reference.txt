@@ -7,8 +7,10 @@ npm install axios
 creating a file server.js
 After Creating BackEnd Project
 Creating  FrontEnd Project
+
 npx create-react-app  react-mysql-crud-client
 cd react-mysql-crud-client
+npm install bootstrap
 npm install react-router-dom
 npm install react-router-bootstrap
 npm install react-bootstrap
