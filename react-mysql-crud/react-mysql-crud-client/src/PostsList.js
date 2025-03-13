@@ -16,8 +16,9 @@ const PostsList = () => {
     };
 
     return (
+
         <div className="container mt-5">
-            <h2>Posts List</h2>
+            <h2>Posts List Table</h2>
             <table className="table table-striped">
                 <thead>
                     <tr>
